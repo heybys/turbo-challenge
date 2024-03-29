@@ -2,10 +2,10 @@
 //   size?: 'SM' | 'MD' | 'LG';
 // }
 
-export function Header({title}: { title: string }) {
+export function Header({ title }: { title: string }) {
   return (
-      <header className="header">
-        <h1>{title}</h1>
-      </header>
-  )
+    <header className="header">
+      <h1>{title}</h1>
+    </header>
+  );
 }
