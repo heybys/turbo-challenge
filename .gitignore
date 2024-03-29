@@ -4,6 +4,8 @@
 node_modules
 .pnp
 .pnp.js
+dist-ssr
+*.local
 
 # Local env files
 .env
@@ -27,16 +29,23 @@ out/
 build
 dist
 
-
-# Debug
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# Misc
-.DS_Store
+# Editor directories and files
 *.pem
-
-# IDE
+.vscode/*
+!.vscode/extensions.json
 .idea
-.vscode
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
