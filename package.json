@@ -1,20 +1,44 @@
 {
+  "name": "turbo-challenge",
   "private": true,
   "scripts": {
-    "build": "turbo build",
-    "dev": "turbo dev",
+    "local": "turbo local",
+    "test": "turbo test",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "lint:fix": "turbo lint:fix",
+    "build:local": "turbo build:local",
+    "build:dev": "turbo build:dev",
+    "build:stg": "turbo build:stg",
+    "build:prod": "turbo build:prod",
+    "start:local": "turbo start:local",
+    "start:dev": "turbo start:dev",
+    "start:stg": "turbo start:stg",
+    "start:prod": "turbo start:prod",
+    "deploy": "turbo deploy",
+    "publish:ui": "turbo @repo/ui#publish",
+    "clean": "turbo clean && rm -rf ./node_modules && rm -rf ./.turbo",
+    "clean:build": "turbo clean:build && rm -rf ./.turbo",
+    "format": "prettier --write \"**/*.{js,json,ts,tsx,md}\"",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
     "@repo/eslint-config": "*",
-    "prettier": "^3.2.5",
-    "turbo": "latest"
+    "@repo/typescript-config": "*",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5",
+    "turbo": "^1.13.0"
   },
   "packageManager": "npm@10.5.0",
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "lint-staged": {
+    "relative": [
+      "package.json",
+      "apps/**/package.json",
+      "packages/**/package.json"
+    ]
+  }
 }

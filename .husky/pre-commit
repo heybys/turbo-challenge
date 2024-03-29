@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 현재 체크아웃된 브랜치
+BRANCH=`git rev-parse --abbrev-ref HEAD`
+# 커밋하면 안되는 브랜치
+PROTECTED_BRANCHES="^(master|develop)"
+
+# 문자열을 비교하기 위한 문법
+if [[ "$BRANCH" =~ $PROTECTED_BRANCHES ]]
+then
+  echo "current branch: $BRANCH"
+  echo "protected branches: $PROTECTED_BRANCHES"
+  echo "--------------------------------------------"
+  echo "⚠️ Warning"
+  echo "- master 또는 develop 에 commit 할 수 없습니다."
+  echo "- Cannot commit to local '$BRANCH' branch"
+  echo "--------------------------------------------"
+  exit 1
+fi
+
+pnpm run format
+
+./node_modules/.bin/lint-staged
+
+exit 0

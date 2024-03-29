@@ -1,14 +1,44 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**"]
-    },
-    "lint": {},
-    "dev": {
+    "local": {
       "cache": false,
       "persistent": true
+    },
+    "lint": {},
+    "lint:fix": {},
+    "@repo/ui#build": {},
+    "build:local": {
+      "dependsOn": ["@repo/ui#build"],
+      "outputs": ["dist/**"]
+    },
+    "build:dev": {
+      "dependsOn": ["@repo/ui#build"],
+      "outputs": ["dist/**"]
+    },
+    "build:prod": {
+      "dependsOn": ["@repo/ui#build"],
+      "outputs": ["dist/**"]
+    },
+    "start:local": {
+      "dependsOn": ["build:local"]
+    },
+    "start:dev": {
+      "dependsOn": ["build:dev"]
+    },
+    "start:prod": {
+      "dependsOn": ["build:prod"]
+    },
+    "test": {},
+    "deploy": {},
+    "@repo/ui#publish": {
+      "dependsOn": ["@repo/ui#build"]
+    },
+    "clean": {
+      "dependsOn": ["^clean"]
+    },
+    "clean:build": {
+      "dependsOn": ["^clean:build"]
     }
   }
 }
