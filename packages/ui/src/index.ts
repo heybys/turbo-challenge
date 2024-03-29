@@ -1,6 +1,6 @@
 // utils
-export { setupCounter } from '@utils/counter';
+export { add } from './utils/calculator';
 
 // components
-export { Header } from '@components/Header';
-export { Counter } from '@components/Counter';
+export { Header } from './components/Header';
+export { Counter } from './components/Counter';

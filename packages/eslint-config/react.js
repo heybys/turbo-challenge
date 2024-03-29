@@ -27,23 +27,7 @@ module.exports = {
       },
     },
   },
-  ignorePatterns: [
-    // Ignore dotfiles
-    'coverage',
-    '.*.js',
-    '.turbo/',
-    'node_modules/',
-    'dist/',
-  ],
   overrides: [
-    // Force ESLint to detect .tsx files
     { files: ['*.js?(x)', '*.ts?(x)'] },
-  ],
-  rules: {
-    'import/extensions': 'off',
-    'no-console': 'off',
-    'no-alert': 'off',
-    'arrow-body-style': 'off',
-    'import/prefer-default-export': 'off',
-  },
+  ]
 };

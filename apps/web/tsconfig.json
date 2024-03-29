@@ -1,8 +1,0 @@
-{
-  "extends": "@repo/typescript-config/react-application.json",
-  "compilerOptions": {
-    "types": ["@testing-library/jest-dom"]
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", ".turbo", "**/*.js"]
-}

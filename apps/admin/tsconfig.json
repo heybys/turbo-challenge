@@ -4,5 +4,10 @@
     "types": ["@testing-library/jest-dom"]
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", ".turbo", "**/*.js"]
+  "exclude": ["node_modules", "dist", ".turbo", "**/*.js"],
+  "references": [
+    {
+      "path": "tsconfig.lint.json"
+    }
+  ]
 }

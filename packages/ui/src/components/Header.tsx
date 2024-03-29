@@ -1,8 +1,8 @@
-// interface HeaderProps extends HTMLElement {
-//   size?: 'SM' | 'MD' | 'LG';
-// }
+interface HeaderProps {
+  title: string;
+}
 
-export function Header({ title }: { title: string }) {
+export function Header({ title }: HeaderProps) {
   return (
     <header className="header">
       <h1>{title}</h1>

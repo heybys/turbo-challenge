@@ -3,7 +3,7 @@ module.exports = {
   root: true,
   extends: ['@repo/eslint-config/react.js'],
   parserOptions: {
-    project: './tsconfig.lint.json',
+    project: './tsconfig.json',
     tsconfigRootDir: __dirname,
   },
 };
