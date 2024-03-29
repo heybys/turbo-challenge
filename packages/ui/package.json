@@ -20,8 +20,8 @@
     ]
   },
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix --ext .js,.ts,.tsx ./src",
+    "lint": "eslint --ext .ts,.tsx,.js .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx,.js ./src",
     "build": "tsc && vite build",
     "clean": "rm -rf ./node_modules && pnpm clean:build",
     "clean:build": "rm -rf ./dist && rm -rf ./.turbo"

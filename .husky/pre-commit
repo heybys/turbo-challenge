@@ -19,7 +19,7 @@ then
   exit 1
 fi
 
-pnpm run format
+npm run format
 
 ./node_modules/.bin/lint-staged
 
