@@ -19,6 +19,7 @@
     "clean": "turbo clean && rm -rf ./node_modules && rm -rf ./.turbo",
     "clean:build": "turbo clean:build && rm -rf ./.turbo",
     "format": "prettier --write \"**/*.{js,json,ts,tsx,md}\"",
+    "format:check": "prettier --check \"**/*.{js,json,ts,tsx,md}\"",
     "prepare": "husky install"
   },
   "devDependencies": {
@@ -35,6 +36,9 @@
     "packages/*"
   ],
   "lint-staged": {
+    "*.{js,json,ts,tsx,md}": [
+      "npm run format:check"
+    ],
     "relative": [
       "package.json",
       "apps/**/package.json",
