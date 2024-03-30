@@ -3,7 +3,8 @@ module.exports = {
   root: true,
   extends: ["@repo/eslint-config/react.js"],
   parserOptions: {
-    project: true,
+    project: './tsconfig.lint.json',
+    tsconfigRootDir: __dirname,
   },
   ignorePatterns: [
     '.turbo/',

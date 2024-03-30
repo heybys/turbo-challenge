@@ -23,7 +23,7 @@
     "lint": "eslint --ext .ts,.tsx,.js .",
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js ./src",
     "build": "tsc && vite build",
-    "clean": "rm -rf ./node_modules && pnpm clean:build",
+    "clean": "rm -rf ./node_modules && npm run clean:build",
     "clean:build": "rm -rf ./dist && rm -rf ./.turbo"
   },
   "dependencies": {

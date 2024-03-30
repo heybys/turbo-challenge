@@ -1,7 +1,11 @@
 import React from 'react';
 
-const Loading = () => {
-  return <div>loading...</div>;
+interface LoadingProps {
+  time: number;
+}
+
+const Loading = ({ time }: LoadingProps) => {
+  return <div>loading...{time}</div>;
 };
 
 export default Loading;

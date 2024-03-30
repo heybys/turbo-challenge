@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint --ext .ts,.tsx,.js .",
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js .",
-    "clean": "rm -rf ./node_modules && rm -rf .swc && rm -rf __tests__ && pnpm clean:build",
+    "clean": "rm -rf ./node_modules && npm run clean:build",
     "clean:build": "rm -rf ./dist && rm -rf ./.turbo"
   },
   "dependencies": {
