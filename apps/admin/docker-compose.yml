@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: .
+    image: turbo-challenge:latest
+    ports:
+      - "80:80"

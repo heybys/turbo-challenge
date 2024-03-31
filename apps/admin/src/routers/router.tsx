@@ -1,18 +1,32 @@
-// import MainPage from '@pages/MainPage.tsx';
-// import MainPage from '@pages/MainPage';
-// import Page from '../'
-
-// const ProductPage = lazy(() => import('@pages/product/ProductPage'));
-
-import { createBrowserRouter, RouteObject } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import MainPage from '@pages/MainPage.tsx';
+import ProductPage from '@pages/product/ProductPage.tsx';
+import ProductDetailPage from '@pages/product/[id]/ProductDetailPage.tsx';
+import MoviePage from '@pages/movie/MoviePage.tsx';
 
-const object: RouteObject = {
-  path: '/',
-  element: <MainPage />,
-  // index: true
-};
-
-const router = createBrowserRouter([object]);
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainPage />,
+    errorElement: <div>error</div>,
+  },
+  {
+    path: '/movies/:movieId',
+    element: <MoviePage />,
+    errorElement: <div>error</div>,
+  },
+  {
+    path: '/products',
+    element: <ProductPage />,
+    errorElement: <div>error</div>,
+    children: [
+      {
+        path: ':productId',
+        index: true,
+        element: <ProductDetailPage />,
+      },
+    ],
+  },
+]);
 
 export default router;

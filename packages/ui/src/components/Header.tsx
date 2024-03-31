@@ -1,11 +1,24 @@
-interface HeaderProps {
-  title: string;
+import styled from 'styled-components';
+import { PropsWithChildren } from 'react';
+import styles from './header.module.css';
+
+interface StyledHeaderProps {
+  size?: 'SM' | 'MD' | 'LG';
 }
 
-export function Header({ title }: HeaderProps) {
+const StyledHeader = styled.header<StyledHeaderProps>`
+  ${({ size }) => (size === 'SM' ? 'font-size: 32px;' : 'font-size: 64px;')}
+  color: white;
+`;
+
+interface HeaderProps extends StyledHeaderProps, PropsWithChildren {}
+
+export function Header({ size = 'SM', children }: HeaderProps) {
   return (
-    <header className="header">
-      <h1>{title}</h1>
-    </header>
+    <>
+      <StyledHeader className={styles.header} size={size}>
+        {children}
+      </StyledHeader>
+    </>
   );
 }

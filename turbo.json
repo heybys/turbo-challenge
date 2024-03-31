@@ -3,11 +3,15 @@
   "pipeline": {
     "local": {
       "cache": false,
-      "persistent": true
+      "persistent": false
     },
     "lint": {},
     "lint:fix": {},
-    "@repo/ui#build": {},
+    "@repo/ui#build": {
+      "dependsOn": ["^@repo/ui#build"],
+      "cache": false,
+      "persistent": false
+    },
     "build:local": {
       "dependsOn": ["@repo/ui#build"],
       "outputs": ["dist/**"]
@@ -20,25 +24,19 @@
       "dependsOn": ["@repo/ui#build"],
       "outputs": ["dist/**"]
     },
-    "start:local": {
-      "dependsOn": ["build:local"]
-    },
-    "start:dev": {
-      "dependsOn": ["build:dev"]
-    },
-    "start:prod": {
-      "dependsOn": ["build:prod"]
-    },
     "test": {},
-    "deploy": {},
+    "dockerize": {
+      "cache": false,
+      "persistent": false
+    },
     "@repo/ui#publish": {
       "dependsOn": ["@repo/ui#build"]
     },
-    "clean": {
-      "dependsOn": ["^clean"]
-    },
-    "clean:build": {
-      "dependsOn": ["^clean:build"]
+    "clean": {},
+    "clean:build": {},
+    "clean:dockerize": {
+      "cache": false,
+      "persistent": false
     }
   }
 }
