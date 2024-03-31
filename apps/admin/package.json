@@ -5,15 +5,16 @@
   "type": "module",
   "scripts": {
     "local": "vite",
+    "test": "jest",
+    "lint": "eslint --ext .ts,.tsx,.js .",
+    "lint:fix": "eslint --fix --ext .ts,.tsx,.js .",
     "build:local": "tsc && vite build --mode on-local",
     "build:dev": "tsc && vite build --mode dev",
     "build:prod": "tsc && vite build --mode prod",
-    "preview": "tsc && vite build --mode on-local && vite preview",
-    "dockerize": "docker-compose up -d",
-    "lint": "eslint --ext .ts,.tsx,.js .",
-    "lint:fix": "eslint --fix --ext .ts,.tsx,.js .",
     "clean": "rm -rf ./node_modules && npm run clean:build",
     "clean:build": "rm -rf ./dist && rm -rf ./.turbo",
+    "preview": "tsc && vite build --mode on-local && vite preview",
+    "dockerize": "docker-compose up -d",
     "clean:dockerize": "docker-compose down && docker rmi turbo-challenge"
   },
   "dependencies": {

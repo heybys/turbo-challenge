@@ -1,6 +1,7 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
+    "types": ["@testing-library/jest-dom"],
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {

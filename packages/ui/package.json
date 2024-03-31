@@ -20,6 +20,7 @@
     ]
   },
   "scripts": {
+    "test": "jest",
     "lint": "eslint --ext .ts,.tsx,.js .",
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js .",
     "build": "tsc && vite build",

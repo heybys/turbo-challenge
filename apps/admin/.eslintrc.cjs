@@ -7,6 +7,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   ignorePatterns: [
+    'jest.setup.js',
     '.turbo/',
     'node_modules/',
     'dist/',
