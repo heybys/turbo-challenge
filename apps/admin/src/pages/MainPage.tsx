@@ -1,5 +1,4 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
 import { Counter, Header } from '@repo/ui';
 
 const MainPage = () => {
@@ -13,7 +12,6 @@ const MainPage = () => {
       env - {process.env.ENV}
       <br />
       test - {process.env.TEST}
-      <Outlet />
     </div>
   );
 };

@@ -20,6 +20,7 @@ const config = {
     '^@assets/(.*)$': '<rootDir>/src/assets/$1',
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
+    '^@mocks/(.*)$': '<rootDir>/src/mocks/$1',
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@routers/(.*)$': '<rootDir>/src/routers/$1',
     '^@stores/(.*)$': '<rootDir>/src/stores/$1',

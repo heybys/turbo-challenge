@@ -10,6 +10,7 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
+      "@mocks/*": ["src/mocks/*"],
       "@pages/*": ["src/pages/*"],
       "@stores/*": ["src/stores/*"],
       "@types/*": ["src/types/*"]
