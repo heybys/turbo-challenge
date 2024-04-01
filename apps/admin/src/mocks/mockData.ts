@@ -1,4 +1,5 @@
-import { MovieListResponse } from '@pages/movie/MoviePage.tsx';
+import { Product } from '@apis/product/product.ts';
+import { MovieListResponse } from '@apis/movie/movie.ts';
 
 export const movieListResponse: MovieListResponse = {
   totCnt: 3,
@@ -23,5 +24,26 @@ export const movieListResponse: MovieListResponse = {
     },
   ],
 };
+
+export const mockProducts: Product[] = [
+  {
+    id: 1,
+    name: 'Product1',
+    cost: 10000,
+    category: '뷰티',
+  },
+  {
+    id: 2,
+    name: 'Product2',
+    cost: 20000,
+    category: '가전',
+  },
+  {
+    id: 3,
+    name: 'Product3',
+    cost: 30000,
+    category: '생필품',
+  },
+];
 
 export const todos = ['숙제하기', '넷플릭스보기', '청소하기'];

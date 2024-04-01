@@ -1,0 +1,7 @@
+.app {
+
+}
+:global(.link) {
+  border: 1px solid #5f9ea0;
+  padding: 10px;
+}

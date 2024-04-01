@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { Movie } from '@pages/movie/MoviePage.tsx';
+import { Movie } from '@apis/movie/movie.ts';
 
 const MovieDetailPage = () => {
   const { movieCd } = useParams();

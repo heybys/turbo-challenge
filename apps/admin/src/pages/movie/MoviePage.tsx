@@ -1,17 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
-
-export interface Movie {
-  movieCd: string;
-  movieNm: string;
-  directors: string[];
-  companys: string[];
-}
-
-export interface MovieListResponse {
-  totCnt: number;
-  movieList: Movie[];
-}
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { getMovies } from '@apis/movie/movieService.ts';
+import { Movie } from '@apis/movie/movie.ts';
 
 const MoviePage = () => {
   const [movieList, setMovieList] = useState<Movie[]>([]);
@@ -21,16 +11,22 @@ const MoviePage = () => {
     navigate(`/movies/${movie.movieCd}`, { state: { movie } });
   };
 
+  const fetchMovieList = async () => {
+    const response = await getMovies();
+    setMovieList(response.movieList);
+  };
+
   useEffect(() => {
-    fetch('api/movies')
-      .then((value) => value.json())
-      .then((response: MovieListResponse) => {
-        setMovieList(response.movieList);
-      });
+    fetchMovieList();
   }, []);
 
   return (
     <div>
+      <div className={'nav'}>
+        <Link className={'link'} to={'/'}>
+          Back
+        </Link>
+      </div>
       <h1>This is my MoviePage</h1>
       <div>---</div>
       {movieList.map((movie) => (

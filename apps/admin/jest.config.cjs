@@ -24,6 +24,7 @@ const config = {
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@routers/(.*)$': '<rootDir>/src/routers/$1',
     '^@stores/(.*)$': '<rootDir>/src/stores/$1',
+    '^@styles/(.*)$': '<rootDir>/src/styles/$1',
   },
 };
 

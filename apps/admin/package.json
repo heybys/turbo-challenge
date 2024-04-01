@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "local": "vite",
+    "local": "vite --mode on-local",
     "test": "jest",
     "lint": "eslint --ext .ts,.tsx,.js .",
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js .",

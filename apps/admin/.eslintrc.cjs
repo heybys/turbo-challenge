@@ -7,6 +7,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   ignorePatterns: [
+    'mockServiceWorker.js',
     'jest.setup.js',
     '.turbo/',
     'node_modules/',
