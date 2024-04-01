@@ -29,11 +29,17 @@ const MoviePage = () => {
       </div>
       <h1>This is my MoviePage</h1>
       <div>---</div>
-      {movieList.map((movie) => (
-        <div key={movie.movieCd} onClick={() => handleMovieClick(movie)}>
-          {movie.movieCd} - {movie.movieNm}
-        </div>
-      ))}
+      <div className={'items'}>
+        {movieList.map((movie) => (
+          <div
+            key={movie.movieCd}
+            className={'button'}
+            onClick={() => handleMovieClick(movie)}
+          >
+            {movie.movieCd} - {movie.movieNm}
+          </div>
+        ))}
+      </div>
       <div>---</div>
       <Outlet />
     </div>

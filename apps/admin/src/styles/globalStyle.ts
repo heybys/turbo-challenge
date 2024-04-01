@@ -36,6 +36,14 @@ const GlobalStyle = createGlobalStyle`
     gap: 5px;
     padding: 10px;
   }
+  .button {
+    color: blue;
+    text-shadow: 1px 1px 1px darkblue;
+    cursor: pointer;
+    border: 1px solid #5f9ea0;
+    padding: 5px;
+    max-width: 200px;
+  }
 `;
 
 export default GlobalStyle;

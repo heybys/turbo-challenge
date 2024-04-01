@@ -2,8 +2,11 @@ import React from 'react';
 import { Counter, Header } from '@repo/ui';
 import { Link } from 'react-router-dom';
 import styles from './mainPage.module.css';
+import useCurrentTime from '@hooks/useCurrentTime.ts';
 
 const MainPage = () => {
+  const currentTime = useCurrentTime();
+
   return (
     <div className={styles.mainPage}>
       <div className={'nav'}>
@@ -19,6 +22,7 @@ const MainPage = () => {
       </div>
       <hr />
       <Header size={'MD'}>This is my MainPage</Header>
+      <Header>{currentTime}</Header>
       <Counter initValue={3} />
       <p>MainPage 입니다.</p>
       <div>node env - {process.env.NODE_ENV}</div>
