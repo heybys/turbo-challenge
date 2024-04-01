@@ -4,34 +4,41 @@ import ProductPage from '@pages/product/ProductPage.tsx';
 import ProductDetailPage from '@pages/product/[id]/ProductDetailPage.tsx';
 import MoviePage from '@pages/movie/MoviePage.tsx';
 import MovieDetailPage from '@pages/movie/[movieCd]/MovieDetailPage.tsx';
+import Layout from '@pages/Layout.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainPage />,
-    errorElement: <div>error</div>,
-  },
-  {
-    path: '/movies',
-    element: <MoviePage />,
-    errorElement: <div>error</div>,
+    element: <Layout />,
     children: [
       {
-        path: ':movieCd',
-        index: true,
-        element: <MovieDetailPage />,
+        path: '/',
+        element: <MainPage />,
+        errorElement: <div>error</div>,
       },
-    ],
-  },
-  {
-    path: '/products',
-    element: <ProductPage />,
-    errorElement: <div>error</div>,
-    children: [
       {
-        path: ':productId',
-        index: true,
-        element: <ProductDetailPage />,
+        path: '/movies',
+        element: <MoviePage />,
+        errorElement: <div>error</div>,
+        children: [
+          {
+            path: ':movieCd',
+            index: true,
+            element: <MovieDetailPage />,
+          },
+        ],
+      },
+      {
+        path: '/products',
+        element: <ProductPage />,
+        errorElement: <div>error</div>,
+        children: [
+          {
+            path: ':productId',
+            index: true,
+            element: <ProductDetailPage />,
+          },
+        ],
       },
     ],
   },
