@@ -1,9 +1,21 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Badge, Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { toRelativeUrl } from '@okta/okta-auth-js';
+import { useOktaAuth } from '@okta/okta-react';
 
 const AppNavBar = () => {
+  const navigate = useNavigate();
+
+  const { oktaAuth, authState } = useOktaAuth();
+
+  const logout = async () => {
+    // Will redirect to Okta to end the session then redirect back to the configured `postLogoutRedirectUri`
+    await oktaAuth.signOut();
+  };
+
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary z-3">
       <Container fluid>
         <Navbar.Brand href="/">Turbo Challenge</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -17,7 +29,34 @@ const AppNavBar = () => {
             <Nav.Link href="/movies">Movies</Nav.Link>
             <Nav.Link href="/products">Products</Nav.Link>
           </Nav>
-          <Button variant="secondary">Login</Button>
+          <div className="d-flex gap-3 align-items-center">
+            <Badge>{authState?.idToken?.claims?.name}</Badge>
+            {!authState ? null : !authState?.isAuthenticated ? (
+              <Button
+                variant="dark"
+                onClick={() => {
+                  const redirectUrl = toRelativeUrl(
+                    window.location.href,
+                    window.location.origin,
+                  );
+                  if (!redirectUrl.includes('sign-in')) {
+                    navigate(`/sign-in?redirectUrl=${redirectUrl}`);
+                  }
+                }}
+              >
+                Sign In
+              </Button>
+            ) : (
+              <Button
+                variant="outline-dark"
+                onClick={() => {
+                  logout();
+                }}
+              >
+                Logout
+              </Button>
+            )}
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

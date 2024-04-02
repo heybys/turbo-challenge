@@ -24,7 +24,13 @@ const RealGrid = () => {
   }, []);
 
   return (
-    <div ref={realGridElement} style={{ height: '500px', width: '80%' }}></div>
+    <div style={{ padding: 10 }}>
+      <h4>real grid sample</h4>
+      <div
+        ref={realGridElement}
+        style={{ height: '500px', width: '100%' }}
+      ></div>
+    </div>
   );
 };
 

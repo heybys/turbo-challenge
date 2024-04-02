@@ -24,7 +24,7 @@ const MoviePage = () => {
 
   return (
     <div className={styles.page}>
-      <h3>This is MovieList</h3>
+      <h3>Movies</h3>
       <Table striped bordered hover width={500}>
         <thead>
           <tr>

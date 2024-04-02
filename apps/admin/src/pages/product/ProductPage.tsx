@@ -20,7 +20,7 @@ const ProductPage = () => {
 
   return (
     <div className={styles.page}>
-      <h1>This is my ProductPage</h1>
+      <h3>Products</h3>
       <RealGrid />
       <Table striped bordered hover width={500}>
         <thead>
