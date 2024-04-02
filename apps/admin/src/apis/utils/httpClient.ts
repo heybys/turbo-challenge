@@ -3,8 +3,11 @@ import axios, { AxiosError } from 'axios';
 const printConsoleLog = false;
 // const apiVersion = 'v1';
 
+const hostname = process.env.REACT_APP_SERVER_HOST ?? 'http://localhost';
+const port = process.env.REACT_APP_SERVER_PORT ?? '8080';
+
 const httpClient = axios.create({
-  baseURL: `${process.env.REACT_APP_SERVER_HOST}:${process.env.REACT_APP_SERVER_PORT}/api`,
+  baseURL: `${hostname}:${port}/api`,
   withCredentials: true,
 });
 

@@ -1,5 +1,5 @@
 import { http } from 'msw/core/http';
-import { HttpHandler, HttpResponse } from 'msw';
+import { HttpHandler, HttpResponse, passthrough } from 'msw';
 import { mockProducts, movieListResponse, todos } from '@mocks/mockData.ts';
 
 const httpHandlers: HttpHandler[] = [
@@ -26,6 +26,11 @@ const httpHandlers: HttpHandler[] = [
     return new HttpResponse(null, {
       status: 201,
     });
+  }),
+
+  http.get('/api/**', ({ request }) => {
+    console.log('hello-' + request.url);
+    return passthrough();
   }),
 ];
 
