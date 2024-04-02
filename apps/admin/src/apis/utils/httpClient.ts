@@ -9,6 +9,12 @@ const port = process.env.REACT_APP_SERVER_PORT ?? '8080';
 const httpClient = axios.create({
   baseURL: `${hostname}:${port}/api`,
   withCredentials: true,
+  headers: {
+    'Content-Type': `application/json;charset=UTF-8`,
+    Accept: 'application/json',
+    'Access-Control-Allow-Origin': `*`,
+    'Access-Control-Allow-Credentials': 'true',
+  },
 });
 
 httpClient.interceptors.request.use(

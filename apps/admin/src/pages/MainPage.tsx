@@ -3,6 +3,7 @@ import { Counter, Header } from '@repo/ui';
 import { Link } from 'react-router-dom';
 import styles from './mainPage.module.css';
 import useCurrentTime from '@hooks/useCurrentTime.ts';
+import { apiTest } from '@apis/auth/authService.ts';
 
 const MainPage = () => {
   const currentTime = useCurrentTime();
@@ -16,9 +17,17 @@ const MainPage = () => {
         <Link className={'link'} to={'/products'}>
           PRODUCTS
         </Link>
-        {/*<Link className={styles.link} to={'/games'}>*/}
-        {/*  GAMES*/}
-        {/*</Link>*/}
+        <div>
+          <button
+            onClick={() => {
+              apiTest().then((value) => {
+                console.log(value);
+              });
+            }}
+          >
+            spring redirect
+          </button>
+        </div>
       </div>
       <hr />
       <Header size={'MD'}>This is my MainPage</Header>

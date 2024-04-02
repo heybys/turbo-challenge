@@ -1,9 +1,10 @@
 import { useState, useEffect, PropsWithChildren } from 'react';
 import { worker } from '@mocks/browser.ts';
 
-const enable = process.env.ENV === 'local';
-
-export const MockServiceWorkerProvider = ({ children }: PropsWithChildren) => {
+export const MockServiceWorkerProvider = ({
+  children,
+  enable,
+}: { enable: boolean } & PropsWithChildren) => {
   const [started, setStarted] = useState(false);
 
   useEffect(() => {

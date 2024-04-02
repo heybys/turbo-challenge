@@ -1,44 +1,39 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainPage from '@pages/MainPage.tsx';
 import ProductPage from '@pages/product/ProductPage.tsx';
-import ProductDetailPage from '@pages/product/[id]/ProductDetailPage.tsx';
 import MoviePage from '@pages/movie/MoviePage.tsx';
-import MovieDetailPage from '@pages/movie/[movieCd]/MovieDetailPage.tsx';
-import Layout from '@pages/Layout.tsx';
+import AppContainer from '@/AppContainer.tsx';
+import movieRoutes from '@/routers/movies/movieRoutes.tsx';
+import productRoutes from '@/routers/products/productRoutes.tsx';
+import OktaProtectedRoute from '@pages/utils/OktaProtectedRoute.tsx';
+import { LoginCallback } from '@okta/okta-react';
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Layout />,
+    element: <AppContainer />,
     children: [
       {
-        path: '/',
+        path: '',
         element: <MainPage />,
-        errorElement: <div>error</div>,
       },
       {
-        path: '/movies',
-        element: <MoviePage />,
-        errorElement: <div>error</div>,
+        path: 'login/callback',
+        element: <LoginCallback />,
+      },
+      {
+        element: <OktaProtectedRoute />,
         children: [
           {
-            path: ':movieCd',
-            index: true,
-            element: <MovieDetailPage />,
+            path: '/movies',
+            element: <MoviePage />,
+            children: movieRoutes,
           },
         ],
       },
       {
         path: '/products',
         element: <ProductPage />,
-        errorElement: <div>error</div>,
-        children: [
-          {
-            path: ':productId',
-            index: true,
-            element: <ProductDetailPage />,
-          },
-        ],
+        children: productRoutes,
       },
     ],
   },

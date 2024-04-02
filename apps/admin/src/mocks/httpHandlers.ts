@@ -28,8 +28,7 @@ const httpHandlers: HttpHandler[] = [
     });
   }),
 
-  http.get('/api/**', ({ request }) => {
-    console.log('hello-' + request.url);
+  http.get('/api/*', () => {
     return passthrough();
   }),
 ];
