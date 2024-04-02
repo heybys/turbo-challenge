@@ -11,8 +11,6 @@ function OktaProtectedRoute() {
       return;
     }
 
-    checkMenuAutorization(authState);
-
     if (!authState?.isAuthenticated) {
       const originalUri = '/'; //toRelativeUrl(window.location.href, window.location.origin);
       // console.log(originalUri);
