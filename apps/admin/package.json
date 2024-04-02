@@ -18,17 +18,20 @@
     "clean:dockerize": "docker-compose down && docker rmi turbo-challenge"
   },
   "dependencies": {
+    "@okta/okta-auth-js": "^7.2.0",
+    "@okta/okta-react": "^6.7.0",
     "@repo/ui": "*",
     "axios": "^1.6.8",
+    "bootstrap": "^5.3.3",
     "moment": "^2.30.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-i18next": "^14.1.0",
     "react-router-dom": "^6.22.3",
+    "realgrid": "^2.8.1",
     "web-vitals": "^3.5.2",
-    "zustand": "^4.5.2",
-    "@okta/okta-auth-js": "^7.2.0",
-    "@okta/okta-react": "^6.7.0"
+    "zustand": "^4.5.2"
   },
   "devDependencies": {
     "@types/node": "^20.12.2",

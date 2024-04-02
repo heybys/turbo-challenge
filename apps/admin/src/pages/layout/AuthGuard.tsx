@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { PropsWithChildren, useEffect } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 // import { toRelativeUrl } from '@okta/okta-auth-js';
-import { Outlet } from 'react-router-dom';
 import { toRelativeUrl } from '@okta/okta-auth-js';
 
-function OktaProtectedRoute() {
+const AuthGuard = ({ children }: PropsWithChildren) => {
   const { oktaAuth, authState } = useOktaAuth();
 
   useEffect(() => {
@@ -37,11 +36,7 @@ function OktaProtectedRoute() {
     );
   }
 
-  return (
-    <>
-      <Outlet />
-    </>
-  );
-}
+  return <>{children}</>;
+};
 
-export default OktaProtectedRoute;
+export default AuthGuard;

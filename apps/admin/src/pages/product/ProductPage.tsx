@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { getProducts } from '@apis/product/productService.ts';
 import { useProductStore } from '@stores/useProductStore.ts';
+import styles from '@pages/mainPage.module.css';
+import { Table } from 'react-bootstrap';
+import RealGrid from '@components/RealGrid.tsx';
 
 const ProductPage = () => {
   const { products, setProducts } = useProductStore();
@@ -16,22 +19,29 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <div>
-      <div className={'nav'}>
-        <Link className={'link'} to={'/'}>
-          Back
-        </Link>
-      </div>
+    <div className={styles.page}>
       <h1>This is my ProductPage</h1>
-      ---
-      <div className={'items'}>
-        {products.map((product) => (
-          <Link key={product.id} to={`/products/${product.id}`}>
-            {product.name}
-          </Link>
-        ))}
-      </div>
-      ---
+      <RealGrid />
+      <Table striped bordered hover width={500}>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
+            <tr key={product.id}>
+              <td>{product.id}</td>
+              <td>{product.name}</td>
+              <td>
+                <Link to={`/products/${product.id}`}>View</Link>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
       <Outlet />
     </div>
   );

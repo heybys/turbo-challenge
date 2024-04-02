@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { getMovies } from '@apis/movie/movieService.ts';
 import { Movie } from '@apis/movie/movie.ts';
+import { Table } from 'react-bootstrap';
+import styles from '@pages/mainPage.module.css';
 
 const MoviePage = () => {
   const [movieList, setMovieList] = useState<Movie[]>([]);
@@ -21,26 +23,30 @@ const MoviePage = () => {
   }, []);
 
   return (
-    <div>
-      <div className={'nav'}>
-        <Link className={'link'} to={'/'}>
-          Back
-        </Link>
-      </div>
-      <h1>This is my MoviePage</h1>
-      <div>---</div>
-      <div className={'items'}>
-        {movieList.map((movie) => (
-          <div
-            key={movie.movieCd}
-            className={'button'}
-            onClick={() => handleMovieClick(movie)}
-          >
-            {movie.movieCd} - {movie.movieNm}
-          </div>
-        ))}
-      </div>
-      <div>---</div>
+    <div className={styles.page}>
+      <h3>This is MovieList</h3>
+      <Table striped bordered hover width={500}>
+        <thead>
+          <tr>
+            <th>Movie Code</th>
+            <th>Movie Name</th>
+            <th>Company</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          {movieList.map((movie) => (
+            <tr key={movie.movieCd}>
+              <td>{movie.movieCd}</td>
+              <td>{movie.movieNm}</td>
+              <td>{movie.companys.join(', ')}</td>
+              <td>
+                <button onClick={() => handleMovieClick(movie)}>View</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
       <Outlet />
     </div>
   );

@@ -8,13 +8,10 @@ const enableMSW = process.env.ENV === 'local';
 
 const App = () => {
   return (
-    <>
-      <MockServiceWorkerProvider enable={enableMSW}>
-        <GlobalStyle />
-        <RouterProvider router={router} />
-      </MockServiceWorkerProvider>
-      ,
-    </>
+    <MockServiceWorkerProvider enable={enableMSW}>
+      <GlobalStyle />
+      <RouterProvider router={router} />
+    </MockServiceWorkerProvider>
   );
 };
 
