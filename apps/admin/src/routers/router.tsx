@@ -2,15 +2,15 @@ import { createBrowserRouter } from 'react-router-dom';
 import MainPage from '@pages/MainPage.tsx';
 import ProductPage from '@pages/product/ProductPage.tsx';
 import MoviePage from '@pages/movie/MoviePage.tsx';
-import AppContainer from '@/AppContainer.tsx';
+import RootLayout from '@pages/layout/RootLayout.tsx';
 import movieRoutes from '@/routers/movies/movieRoutes.tsx';
 import productRoutes from '@/routers/products/productRoutes.tsx';
-import OktaProtectedRoute from '@pages/utils/OktaProtectedRoute.tsx';
+import OktaProtectedRoute from '@pages/layout/OktaProtectedRoute.tsx';
 import { LoginCallback } from '@okta/okta-react';
 
 const router = createBrowserRouter([
   {
-    element: <AppContainer />,
+    element: <RootLayout />,
     children: [
       {
         path: '',

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 // import { toRelativeUrl } from '@okta/okta-auth-js';
 import { Outlet } from 'react-router-dom';
+import { toRelativeUrl } from '@okta/okta-auth-js';
 
 function OktaProtectedRoute() {
   const { oktaAuth, authState } = useOktaAuth();
@@ -12,8 +13,10 @@ function OktaProtectedRoute() {
     }
 
     if (!authState?.isAuthenticated) {
-      const originalUri = '/'; //toRelativeUrl(window.location.href, window.location.origin);
-      // console.log(originalUri);
+      const originalUri = toRelativeUrl(
+        window.location.href,
+        window.location.origin,
+      );
       oktaAuth.setOriginalUri(originalUri);
       oktaAuth.signInWithRedirect();
     }
@@ -29,12 +32,16 @@ function OktaProtectedRoute() {
           height: '100vh',
         }}
       >
-        ...
+        wait a minute...
       </div>
     );
   }
 
-  return <Outlet />;
+  return (
+    <>
+      <Outlet />
+    </>
+  );
 }
 
 export default OktaProtectedRoute;

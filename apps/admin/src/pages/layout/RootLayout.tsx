@@ -20,15 +20,12 @@ const oktaAuthOptions: OktaAuthOptions = {
 
 const oktaAuth = new OktaAuth(oktaAuthOptions);
 
-const AppContainer = () => {
+const RootLayout = () => {
   const navigate = useNavigate();
   const restoreOriginalUri: RestoreOriginalUriFunction = (
     _oktaAuth,
     originalUri,
   ) => {
-    console.log('this restoreOriginalUri gogo');
-    console.log(_oktaAuth);
-    console.log(originalUri);
     navigate(toRelativeUrl(originalUri || '/', window.location.origin));
   };
 
@@ -41,4 +38,4 @@ const AppContainer = () => {
   );
 };
 
-export default AppContainer;
+export default RootLayout;
