@@ -13,6 +13,7 @@ export default defineConfig(() => {
     },
     resolve: {
       alias: [
+        { find: '@nm', replacement: '../../../node_modules' },
         { find: '@', replacement: '/src' },
         { find: '@apis', replacement: '/src/apis' },
         { find: '@assets', replacement: '/src/assets' },

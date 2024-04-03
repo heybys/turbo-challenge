@@ -5,6 +5,7 @@
     "outDir": "dist",
     "baseUrl": ".",
     "paths": {
+      "@nm/*": ["../../../node_modules/*"],
       "@/*": ["src/*"],
       "@apis/*": ["src/apis/*"],
       "@assets/*": ["src/assets/*"],
