@@ -25,10 +25,10 @@ const RealGrid = () => {
 
   return (
     <div style={{ padding: 10 }}>
-      <h4>real grid sample</h4>
+      <h4>RealGrid sample</h4>
       <div
         ref={realGridElement}
-        style={{ height: '500px', width: '100%' }}
+        style={{ height: '200px', width: '800px' }}
       ></div>
     </div>
   );

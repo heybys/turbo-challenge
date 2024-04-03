@@ -4,7 +4,6 @@ import { getProducts } from '@apis/product/productService.ts';
 import { useProductStore } from '@stores/useProductStore.ts';
 import styles from '@pages/mainPage.module.css';
 import { Table } from 'react-bootstrap';
-import RealGrid from '@components/RealGrid.tsx';
 
 const ProductPage = () => {
   const { products, setProducts } = useProductStore();
@@ -21,7 +20,6 @@ const ProductPage = () => {
   return (
     <div className={styles.page}>
       <h3>Products</h3>
-      <RealGrid />
       <Table striped bordered hover width={500}>
         <thead>
           <tr>
