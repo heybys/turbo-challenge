@@ -14,9 +14,9 @@ const oktaAuthOptions: OktaAuthOptions = {
   clientId: CLIENT_ID,
   issuer: ISSUER,
   redirectUri: REDIRECT_URI,
-  scopes: ['openid', 'profile', 'email', 'offline_access'],
+  scopes: ['openid', 'profile', 'email'],
   pkce: true,
-  responseType: ['id_token', 'token', 'refresh_token'],
+  responseType: ['id_token', 'token'],
 };
 
 const oktaAuth = new OktaAuth(oktaAuthOptions);
