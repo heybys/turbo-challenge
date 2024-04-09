@@ -31,6 +31,7 @@ const HighCharts = () => {
       <HighchartsReact
         highcharts={Highcharts}
         options={{
+          accessibility: { enabled: false },
           title: { text: 'Sample' },
           xAxis: { categories: ['A', 'B', 'C'] },
           series,

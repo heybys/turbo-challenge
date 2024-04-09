@@ -10,11 +10,7 @@ const FroalaEditor = () => {
   return (
     <div style={{ padding: 10 }}>
       <h4>FroalaEditor sample</h4>
-      <FroalaEditorComponent
-        tag="textarea"
-        model={{ src: '@assets/react.svg', width: '300px', alt: 'Old Clock' }}
-        config={config}
-      />
+      <FroalaEditorComponent tag="textarea" config={config} />
     </div>
   );
 };
