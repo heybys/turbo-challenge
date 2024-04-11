@@ -3,14 +3,18 @@ import { RouterProvider } from 'react-router-dom';
 import router from '@/routers/router.tsx';
 import GlobalStyle from '@/styles/globalStyle.ts';
 import MockServiceWorkerProvider from '@mocks/MockServiceWorkerProvider.tsx';
+import { ThemeProvider } from 'styled-components';
+import { defaultTheme } from '@repo/ui';
 
 const enableMSW = process.env.ENV === 'local';
 
 const App = () => {
   return (
     <MockServiceWorkerProvider enable={enableMSW}>
-      <GlobalStyle />
-      <RouterProvider router={router} />
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyle />
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </MockServiceWorkerProvider>
   );
 };

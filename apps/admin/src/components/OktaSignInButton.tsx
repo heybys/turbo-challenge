@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
 import { useOktaAuth } from '@okta/okta-react';
+// import { Button } from '@repo/ui';
 
 interface OktaSignInButtonProps {
   redirectUrl?: string;
@@ -20,11 +20,7 @@ const OktaSignInButton = ({ redirectUrl = '/' }: OktaSignInButtonProps) => {
     }
   };
 
-  return (
-    <Button variant="dark" onClick={handleClickButton}>
-      Okta
-    </Button>
-  );
+  return <button onClick={handleClickButton}>Okta</button>;
 };
 
 export default OktaSignInButton;

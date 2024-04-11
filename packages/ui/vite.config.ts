@@ -8,6 +8,14 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   plugins: [react(), dts({ insertTypesEntry: true }), tsconfigPaths()],
+  resolve: {
+    alias: [
+      { find: '@', replacement: '/src' },
+      { find: '@components', replacement: '/src/components' },
+      { find: '@styles', replacement: '/src/styles' },
+      { find: '@utils', replacement: '/src/utils' },
+    ],
+  },
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),

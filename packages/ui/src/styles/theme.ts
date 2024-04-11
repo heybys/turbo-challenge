@@ -1,7 +1,7 @@
-import * as scale from '@styles/design-token/scale';
-import * as semantic from '@styles/design-token/semantic';
+import * as scale from './design-token/scale';
+import * as semantic from './design-token/semantic';
 
-const theme = {
+export const defaultTheme = {
   colors: {
     ...scale.color,
     ...semantic.color,
@@ -20,4 +20,4 @@ const theme = {
   },
 };
 
-export default theme;
+export default defaultTheme;

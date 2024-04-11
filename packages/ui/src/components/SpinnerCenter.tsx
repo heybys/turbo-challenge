@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Container, Row, Spinner } from 'react-bootstrap';
 
-const SpinnerCenter = () => {
+export const SpinnerCenter = () => {
   return (
     <Container
       className="position-absolute top-0 vh-100 d-flex align-items-center"

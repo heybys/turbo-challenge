@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from './mainPage.module.css';
 import useCurrentTime from '@hooks/useCurrentTime.ts';
-import FroalaEditor from '@components/FroalaEditor.tsx';
-import RealGrid from '@components/RealGrid.tsx';
-import HighCharts from '@components/HighCharts.tsx';
+import { FullCalendar, HighCharts, FroalaEditor, RealGrid } from '@repo/ui';
 
 const MainPage = () => {
   const currentTime = useCurrentTime();
@@ -13,6 +11,7 @@ const MainPage = () => {
       <h3>This is MainPage.</h3>
       <p>{currentTime}</p>
       <hr />
+      <FullCalendar />
       <HighCharts />
       <FroalaEditor />
       <RealGrid />

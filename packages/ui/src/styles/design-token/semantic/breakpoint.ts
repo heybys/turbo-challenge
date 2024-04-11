@@ -1,4 +1,4 @@
-import { breakpoint } from '@styles/design-token/scale';
+import { breakpoint } from '../scale';
 
 export const mobile = `@media (min-width: ${breakpoint.sm}px)`;
 export const tablet = `@media (min-width: ${breakpoint.md}px)`;

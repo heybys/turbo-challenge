@@ -2,7 +2,7 @@ import FroalaEditorComponent from 'react-froala-wysiwyg';
 
 import React from 'react';
 
-const FroalaEditor = () => {
+export const FroalaEditor = () => {
   const config = {
     placeholderText: 'Edit Your Content Here!',
     charCounterCount: false,

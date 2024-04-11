@@ -29,7 +29,17 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/list": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
+    "@fullcalendar/timegrid": "^6.1.11",
+    "highcharts-react-official": "^3.2.1",
+    "react-froala-wysiwyg": "^4.2.0",
+    "realgrid": "^2.8.1",
+    "bootstrap": "^5.3.3",
+    "react-bootstrap": "^2.10.2"
   },
   "devDependencies": {
     "@types/node": "^20.12.2",
@@ -42,5 +52,8 @@
     "vite": "^5.2.6",
     "vite-plugin-dts": "^3.7.3",
     "vite-tsconfig-paths": "^4.3.2"
+  },
+  "peerDependencies": {
+    "styled-components": "^6.1.8"
   }
 }

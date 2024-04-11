@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 import { GridView, LocalDataProvider } from 'realgrid';
-import { columns, fields, rows } from './realgridData';
+import { columns, fields, rows } from './realgridData.ts';
 // import 'realgrid/dist/realgrid-style.css';
 
-const RealGrid = () => {
+export const RealGrid = () => {
   const realGridElement = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

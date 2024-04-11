@@ -1,6 +1,11 @@
-// utils
-export { add } from './utils/calculator';
+export { defaultTheme } from './styles/theme';
 
-// components
-export { Header } from './components/Header';
-export { Counter } from './components/Counter';
+export { FullCalendar } from './components/FullCalendar';
+export { FroalaEditor } from './components/FroalaEditor';
+export { RealGrid } from './components/RealGrid';
+export { HighCharts } from './components/HighCharts';
+
+export { SpinnerCenter } from './components/SpinnerCenter';
+export { Spinner } from './components/Spinner';
+
+// export { Button } from 'react-bootstrap';

@@ -1,4 +1,4 @@
-import { color } from '@styles/design-token/scale';
+import { color } from '../scale';
 
 export const textTitle = color.gray700;
 export const textBody = color.gray700;

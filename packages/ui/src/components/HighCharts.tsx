@@ -2,7 +2,7 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import React, { useState } from 'react';
 
-const HighCharts = () => {
+export const HighCharts = () => {
   const [series, setSeries] = useState([{ data: [1, 2, 3] }]);
   const [hoverData, setHoverData] = useState<string | null>(null);
   const plotOptions = {

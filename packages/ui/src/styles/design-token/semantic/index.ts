@@ -1,4 +1,4 @@
-export * as breakpoint from '@styles/design-token/semantic/breakpoint';
-export * as color from '@styles/design-token/semantic/color';
-export * as radius from '@styles/design-token/semantic/radius';
-export * as typography from '@styles/design-token/semantic/typography';
+export * as breakpoint from './breakpoint';
+export * as color from './color';
+export * as radius from './radius';
+export * as typography from './typography';
