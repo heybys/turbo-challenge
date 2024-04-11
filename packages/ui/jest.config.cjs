@@ -1,7 +1,8 @@
 /** @type {import('jest').Config} */
 const config = {
   setupFilesAfterEnv: [
-    "@testing-library/jest-dom"
+    "@testing-library/jest-dom",
+    'jest-styled-components'
   ],
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
@@ -18,7 +19,6 @@ const config = {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@styles/(.*)$': '<rootDir>/src/styles/$1',
-    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
   },
 };
 

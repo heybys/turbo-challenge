@@ -33,5 +33,3 @@ export const RealGrid = () => {
     </div>
   );
 };
-
-export default RealGrid;

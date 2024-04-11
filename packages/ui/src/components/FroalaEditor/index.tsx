@@ -14,5 +14,3 @@ export const FroalaEditor = () => {
     </div>
   );
 };
-
-export default FroalaEditor;

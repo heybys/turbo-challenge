@@ -9,12 +9,9 @@ const StyledDiv = styled.div`
   width: 1000px;
 
   ${(props) => ({
-    color: props.theme.colors.blue300,
+    color: props.theme.colors.blue900,
   })}
-  ${(props) => ({
-    backgroundColor: props.theme.colors.blue100,
-  })}
-  
+
   .fc-toolbar-title {
     text-transform: uppercase;
   }

@@ -2,8 +2,22 @@
  * @jest-environment jsdom
  */
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import MainPage from './MainPage.tsx';
+import { render } from '@/__test__/utils.tsx';
+
+jest.mock('@repo/ui', () => {
+  const FullCalendar = () => <div>FullCalendar</div>;
+  const HighCharts = () => <div>HighCharts</div>;
+  const FroalaEditor = () => <div>FroalaEditor</div>;
+  const RealGrid = () => <div>RealGrid</div>;
+  return {
+    FullCalendar,
+    HighCharts,
+    FroalaEditor,
+    RealGrid,
+  };
+});
 
 describe('MainPage', () => {
   test('render', () => {

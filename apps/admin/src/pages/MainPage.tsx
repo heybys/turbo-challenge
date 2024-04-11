@@ -3,7 +3,11 @@ import useCurrentTime from '@hooks/useCurrentTime.ts';
 import { FullCalendar, HighCharts, FroalaEditor, RealGrid } from '@repo/ui';
 import styled from 'styled-components';
 
-const StyledMainPage = styled.div``;
+const StyledMainPage = styled.div`
+  ${({ theme }) => ({
+    backgroundColor: theme.colors.gray100,
+  })}
+`;
 
 const MainPage = () => {
   const currentTime = useCurrentTime();

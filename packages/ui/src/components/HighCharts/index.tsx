@@ -41,5 +41,3 @@ export const HighCharts = () => {
     </div>
   );
 };
-
-export default HighCharts;

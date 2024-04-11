@@ -1,5 +1,14 @@
 import React from 'react';
-import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import { Spinner as BsSpinner } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+
+export const Spinner = () => {
+  return (
+    <BsSpinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </BsSpinner>
+  );
+};
 
 export const SpinnerCenter = () => {
   return (
@@ -9,11 +18,9 @@ export const SpinnerCenter = () => {
     >
       <Row className="w-100 justify-content-center">
         <Col className="w-auto flex-grow-0">
-          <Spinner />
+          <BsSpinner />
         </Col>
       </Row>
     </Container>
   );
 };
-
-export default SpinnerCenter;

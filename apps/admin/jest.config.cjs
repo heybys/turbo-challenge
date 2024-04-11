@@ -2,7 +2,8 @@
 const config = {
   setupFiles: ['<rootDir>/jest.setup.js'],
   setupFilesAfterEnv: [
-    "@testing-library/jest-dom"
+    "@testing-library/jest-dom",
+    'jest-styled-components'
   ],
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
@@ -18,6 +19,8 @@ const config = {
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
     '^@nm/(.*)$': '<rootDir>/../../../node_modules/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@apis/(.*)$': '<rootDir>/src/apis/$1',
     '^@assets/(.*)$': '<rootDir>/src/assets/$1',
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
