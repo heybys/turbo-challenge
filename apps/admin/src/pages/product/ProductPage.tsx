@@ -2,8 +2,14 @@ import React, { useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { getProducts } from '@apis/product/productService.ts';
 import { useProductStore } from '@stores/useProductStore.ts';
-import styles from '@pages/mainPage.module.css';
 import { Table } from 'react-bootstrap';
+import styled from 'styled-components';
+
+const StyledProductPage = styled.div`
+  font-size: 1rem;
+  color: #333;
+  padding: 1rem;
+`;
 
 const ProductPage = () => {
   const { products, setProducts } = useProductStore();
@@ -18,7 +24,7 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <div className={styles.page}>
+    <StyledProductPage>
       <h3>Products</h3>
       <Table striped bordered hover width={500}>
         <thead>
@@ -41,7 +47,7 @@ const ProductPage = () => {
         </tbody>
       </Table>
       <Outlet />
-    </div>
+    </StyledProductPage>
   );
 };
 

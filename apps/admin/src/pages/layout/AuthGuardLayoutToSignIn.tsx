@@ -3,7 +3,6 @@ import { useOktaAuth } from '@okta/okta-react';
 import { toRelativeUrl } from '@okta/okta-auth-js';
 import { Outlet } from 'react-router-dom';
 import { SpinnerCenter } from '@repo/ui';
-// import SpinnerCenter from '../../../../../packages/ui/src/components/SpinnerCenter.tsx';
 
 const AuthGuardLayoutToSignIn = () => {
   const { oktaAuth, authState } = useOktaAuth();
@@ -25,7 +24,6 @@ const AuthGuardLayoutToSignIn = () => {
 
   if (!authState || !authState?.isAuthenticated) {
     return <SpinnerCenter />;
-    // return <div></div>;
   }
 
   return <Outlet />;

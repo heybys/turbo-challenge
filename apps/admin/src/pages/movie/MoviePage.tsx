@@ -3,7 +3,13 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { getMovies } from '@apis/movie/movieService.ts';
 import { Movie } from '@apis/movie/movie.ts';
 import { Table } from 'react-bootstrap';
-import styles from '@pages/mainPage.module.css';
+import styled from 'styled-components';
+
+const StyledMoviePage = styled.div`
+  font-size: 1rem;
+  color: #333;
+  padding: 1rem;
+`;
 
 const MoviePage = () => {
   const [movieList, setMovieList] = useState<Movie[]>([]);
@@ -23,7 +29,7 @@ const MoviePage = () => {
   }, []);
 
   return (
-    <div className={styles.page}>
+    <StyledMoviePage>
       <h3>Movies</h3>
       <Table striped bordered hover width={500}>
         <thead>
@@ -48,7 +54,7 @@ const MoviePage = () => {
         </tbody>
       </Table>
       <Outlet />
-    </div>
+    </StyledMoviePage>
   );
 };
 

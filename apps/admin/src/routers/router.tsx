@@ -9,7 +9,7 @@ import { LoginCallback } from '@okta/okta-react';
 import AuthGuardLayout from '@pages/layout/AuthGuardLayout.tsx';
 import NotFoundPage from '@pages/layout/NotFoundPage.tsx';
 import SignInPage from '@pages/sign-in/SignInPage.tsx';
-// import { SpinnerCenter } from '@repo/ui';
+import { SpinnerCenter } from '@repo/ui';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/login/callback',
-        element: <LoginCallback loadingElement={<div></div>} />,
+        element: <LoginCallback loadingElement={<SpinnerCenter />} />,
       },
       {
         element: <AuthGuardLayout />,
