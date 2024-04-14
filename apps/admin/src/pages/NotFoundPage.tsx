@@ -9,9 +9,16 @@ const StyledNotFoundPage = styled.div`
   justify-content: center;
   position: absolute;
   top: 0;
+`;
 
-  span {
-    font-weight: bold;
+const StyledTextArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+
+  .status {
     font-size: 1.5rem;
   }
 `;
@@ -19,7 +26,11 @@ const StyledNotFoundPage = styled.div`
 const NotFoundPage = () => {
   return (
     <StyledNotFoundPage>
-      <span>🚫 Not Found Page</span>
+      <StyledTextArea>
+        <div className="status">404</div>
+        <div className="line vr me-3 ms-3" />
+        <div>This page could not be found.</div>
+      </StyledTextArea>
     </StyledNotFoundPage>
   );
 };
