@@ -28,6 +28,7 @@ const AppNavBar = () => {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/movies">Movies</Nav.Link>
             <Nav.Link href="/products">Products</Nav.Link>
+            <Nav.Link href="/ui">UI</Nav.Link>
           </Nav>
           <div className="d-flex gap-3 align-items-center">
             <Badge>{authState?.idToken?.claims?.name}</Badge>

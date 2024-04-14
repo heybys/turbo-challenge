@@ -24,7 +24,7 @@ export const HighCharts = () => {
   };
 
   return (
-    <div style={{ padding: 10 }}>
+    <div style={{ padding: 10, width: 800 }}>
       <h4>HighCharts sample</h4>
       <h6>Hovering over {hoverData} </h6>
       <button onClick={updateSeries}>Update Series</button>

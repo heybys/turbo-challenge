@@ -9,6 +9,7 @@ import AuthGuardLayout from '@layout/AuthGuardLayout.tsx';
 import NotFoundPage from '@pages/NotFoundPage.tsx';
 import SignInPage from '@pages/sign-in/SignInPage.tsx';
 import LoginCallbackPage from '@pages/login/callback/LoginCallbackPage.tsx';
+import UiPage from '@pages/ui/UiPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/login/callback',
         element: <LoginCallbackPage />,
+      },
+      {
+        path: '/ui',
+        element: <UiPage />,
       },
       {
         element: <AuthGuardLayout />,
