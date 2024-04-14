@@ -1,15 +1,14 @@
 import { createBrowserRouter } from 'react-router-dom';
 import MainPage from '@pages/MainPage.tsx';
-import ProductPage from '@pages/product/ProductPage.tsx';
-import MoviePage from '@pages/movie/MoviePage.tsx';
-import RootLayout from '@pages/layout/RootLayout.tsx';
-import movieRoutes from '@/routers/movies/movieRoutes.tsx';
-import productRoutes from '@/routers/products/productRoutes.tsx';
-import { LoginCallback } from '@okta/okta-react';
-import AuthGuardLayout from '@pages/layout/AuthGuardLayout.tsx';
-import NotFoundPage from '@pages/layout/NotFoundPage.tsx';
+import ProductPage from '@pages/products/ProductPage.tsx';
+import MoviePage from '@pages/movies/MoviePage.tsx';
+import RootLayout from '@layout/RootLayout.tsx';
+import moviePageRoutes from '@router/moviePageRoutes.tsx';
+import productPageRoutes from '@router/productPageRoutes.tsx';
+import AuthGuardLayout from '@layout/AuthGuardLayout.tsx';
+import NotFoundPage from '@pages/*/NotFoundPage.tsx';
 import SignInPage from '@pages/sign-in/SignInPage.tsx';
-import { SpinnerCenter } from '@repo/ui';
+import LoginCallbackPage from '@pages/login/callback/LoginCallbackPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/login/callback',
-        element: <LoginCallback loadingElement={<SpinnerCenter />} />,
+        element: <LoginCallbackPage />,
       },
       {
         element: <AuthGuardLayout />,
@@ -34,12 +33,12 @@ const router = createBrowserRouter([
           {
             path: '/movies',
             element: <MoviePage />,
-            children: movieRoutes,
+            children: moviePageRoutes,
           },
           {
             path: '/products',
             element: <ProductPage />,
-            children: productRoutes,
+            children: productPageRoutes,
           },
         ],
       },

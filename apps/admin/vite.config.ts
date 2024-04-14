@@ -6,11 +6,11 @@ import EnvironmentPlugin from 'vite-plugin-environment';
 export default defineConfig(() => {
   return {
     plugins: [react(), EnvironmentPlugin('all')],
-    server: {
-      proxy: {
-        '/api': 'http://localhost:3000',
-      },
-    },
+    // server: {
+    //   proxy: {
+    //     '/api': 'http://localhost:3000',
+    //   },
+    // },
     resolve: {
       alias: [
         { find: '@nm', replacement: '../../../node_modules' },
@@ -19,11 +19,12 @@ export default defineConfig(() => {
         { find: '@assets', replacement: '/src/assets' },
         { find: '@components', replacement: '/src/components' },
         { find: '@hooks', replacement: '/src/hooks' },
+        { find: '@layout', replacement: '/src/layout' },
         { find: '@mocks', replacement: '/src/mocks' },
         { find: '@pages', replacement: '/src/pages' },
+        { find: '@router', replacement: '/src/router' },
         { find: '@stores', replacement: '/src/stores' },
         { find: '@styles', replacement: '/src/styles' },
-        { find: '@types', replacement: '/src/types' },
       ],
     },
   };

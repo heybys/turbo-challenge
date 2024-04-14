@@ -6,16 +6,17 @@ const GlobalStyle = createGlobalStyle`
   *::after {
     box-sizing: border-box;
   }
-  
+
   * {
     margin: 0;
   }
-  
+
   html, body {
     height: 100%;
   }
-  
+
   body {
+    font-family: Arial, Consolas, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;

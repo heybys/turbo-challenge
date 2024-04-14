@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
 import { Movie } from '@apis/movie/movie.ts';
 
-const MovieDetailPage = () => {
+const MovieDetail = () => {
   const { movieCd } = useParams();
   const { state } = useLocation();
 
@@ -20,4 +20,4 @@ const MovieDetailPage = () => {
   );
 };
 
-export default MovieDetailPage;
+export default MovieDetail;

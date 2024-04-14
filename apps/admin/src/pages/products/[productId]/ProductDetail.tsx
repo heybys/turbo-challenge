@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useProductStore } from '@stores/useProductStore.ts';
 import { Product } from '@apis/product/product.ts';
 
-const ProductDetailPage = () => {
+const ProductDetail = () => {
   const { productId } = useParams();
   const { products, findById } = useProductStore();
   const [product, setProduct] = useState<Product>();
@@ -27,4 +27,4 @@ const ProductDetailPage = () => {
   );
 };
 
-export default ProductDetailPage;
+export default ProductDetail;

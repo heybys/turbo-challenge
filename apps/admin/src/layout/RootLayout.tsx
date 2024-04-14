@@ -2,7 +2,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { Security } from '@okta/okta-react';
 import { RestoreOriginalUriFunction } from '@okta/okta-react/bundles/types/OktaContext';
 import OktaAuth, { OktaAuthOptions, toRelativeUrl } from '@okta/okta-auth-js';
-import AppNavBar from '@pages/layout/AppNavBar.tsx';
+import AppNavBar from '@layout/AppNavBar.tsx';
 
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID || '0oag62vqug68vN46s5d7';
 const ISSUER =
