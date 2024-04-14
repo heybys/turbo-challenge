@@ -2,11 +2,11 @@ import React from 'react';
 import { useOktaAuth } from '@okta/okta-react';
 import { Button } from '@repo/ui';
 
-interface OktaSignInButtonProps {
+interface SignInButtonProps {
   redirectUrl?: string;
 }
 
-const OktaSignInButton = ({ redirectUrl = '/' }: OktaSignInButtonProps) => {
+const SignInButton = ({ redirectUrl = '/' }: SignInButtonProps) => {
   const { oktaAuth, authState } = useOktaAuth();
 
   const handleClickButton = () => {
@@ -23,4 +23,4 @@ const OktaSignInButton = ({ redirectUrl = '/' }: OktaSignInButtonProps) => {
   return <Button onClick={handleClickButton}>Okta</Button>;
 };
 
-export default OktaSignInButton;
+export default SignInButton;

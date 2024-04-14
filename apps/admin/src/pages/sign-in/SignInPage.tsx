@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import OktaSignInButton from '@components/OktaSignInButton.tsx';
+import SignInButton from '@pages/sign-in/SignInButton.tsx';
 import { useLocation } from 'react-router-dom';
 
 const SignInPage = () => {
@@ -15,7 +15,7 @@ const SignInPage = () => {
     >
       <Row className="w-100 justify-content-center">
         <Col className="w-auto d-flex justify-content-center">
-          <OktaSignInButton redirectUrl={redirectUrl} />
+          <SignInButton redirectUrl={redirectUrl} />
         </Col>
       </Row>
     </Container>
