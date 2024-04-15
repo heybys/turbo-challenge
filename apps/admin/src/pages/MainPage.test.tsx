@@ -4,7 +4,7 @@
 import React from 'react';
 import { screen } from '@testing-library/react';
 import MainPage from './MainPage.tsx';
-import { render } from '@/__test__/utils.tsx';
+import { render } from '@/__tests__/utils.tsx';
 
 jest.mock('@repo/ui', () => {
   const FullCalendar = () => <div>FullCalendar</div>;

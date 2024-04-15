@@ -2,7 +2,7 @@ import React from 'react';
 import { RouterProvider } from 'react-router-dom';
 import router from '@router/router.tsx';
 import GlobalStyle from '@styles/globalStyle.ts';
-import MockServiceWorkerProvider from '@mocks/MockServiceWorkerProvider.tsx';
+import MockServiceWorkerProvider from '@/__tests__/MockServiceWorkerProvider.tsx';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@repo/ui';
 

@@ -25,7 +25,6 @@ const config = {
     '^@components/(.*)$': '<rootDir>/src/components/$1',
     '^@hooks/(.*)$': '<rootDir>/src/hooks/$1',
     '^@layout/(.*)$': '<rootDir>/src/layout/$1',
-    '^@mocks/(.*)$': '<rootDir>/src/mocks/$1',
     '^@pages/(.*)$': '<rootDir>/src/pages/$1',
     '^@router/(.*)$': '<rootDir>/src/router/$1',
     '^@stores/(.*)$': '<rootDir>/src/stores/$1',

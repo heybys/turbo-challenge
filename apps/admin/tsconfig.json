@@ -12,7 +12,6 @@
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@layout/*": ["src/layout/*"],
-      "@mocks/*": ["src/mocks/*"],
       "@pages/*": ["src/pages/*"],
       "@router/*": ["src/router/*"],
       "@stores/*": ["src/stores/*"],

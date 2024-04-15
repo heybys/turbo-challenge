@@ -1,6 +1,10 @@
 import { http } from 'msw/core/http';
 import { HttpHandler, HttpResponse, passthrough } from 'msw';
-import { mockProducts, movieListResponse, todos } from '@mocks/mockData.ts';
+import {
+  mockProducts,
+  movieListResponse,
+  todos,
+} from '@/__tests__/mocks/data.ts';
 
 const httpHandlers: HttpHandler[] = [
   // 영화 목록

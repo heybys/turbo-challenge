@@ -1,5 +1,5 @@
 import { useState, useEffect, PropsWithChildren } from 'react';
-import { worker } from '@mocks/browser.ts';
+import { worker } from '@/__tests__/browser.ts';
 
 export const MockServiceWorkerProvider = ({
   children,

@@ -2,7 +2,7 @@ import 'jest-styled-components';
 import { render, RenderOptions } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import React, { PropsWithChildren } from 'react';
-import { defaultTheme } from './mockTheme.ts';
+import { defaultTheme } from '@/__tests__/mocks/theme.ts';
 
 const Wrapper = ({ children }: PropsWithChildren) => (
   <ThemeProvider theme={defaultTheme}>{children}</ThemeProvider>
