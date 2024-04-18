@@ -16,7 +16,7 @@ const ProductPage = () => {
 
   const fetchProducts = async () => {
     const response = await productService.getProducts();
-    setProducts(response);
+    setProducts(response.data);
   };
 
   useEffect(() => {

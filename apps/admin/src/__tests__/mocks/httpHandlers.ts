@@ -32,6 +32,11 @@ const httpHandlers: HttpHandler[] = [
     });
   }),
 
+  // 할일 목록
+  http.get('http://localhost:8080/test', async () => {
+    return HttpResponse.json(mockProducts);
+  }),
+
   http.get('http://localhost:8080/**/*', () => {
     return passthrough();
   }),

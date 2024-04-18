@@ -1,9 +1,21 @@
 import { useEffect, useRef } from 'react';
-import { GridView, LocalDataProvider } from 'realgrid';
-import { columns, fields, rows } from './realgridData.ts';
+import {
+  ConfigObject,
+  DataFieldInput,
+  DataValues,
+  GridView,
+  LocalDataProvider,
+} from 'realgrid';
+// import { columns, fields, rows } from './realgridData.ts';
 // import 'realgrid/dist/realgrid-style.css';
 
-export const RealGrid = () => {
+interface RealGridProps {
+  fields: DataFieldInput[];
+  columns: (string | ConfigObject)[];
+  rows: DataValues[];
+}
+
+export const RealGrid = ({ fields, columns, rows }: RealGridProps) => {
   const realGridElement = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
