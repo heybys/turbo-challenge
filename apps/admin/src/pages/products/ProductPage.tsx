@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import { getProducts } from '@apis/product/productService.ts';
+import productService from '@apis/product/productService.ts';
 import { useProductStore } from '@stores/useProductStore.ts';
 import { Table } from 'react-bootstrap';
 import styled from 'styled-components';
@@ -15,7 +15,7 @@ const ProductPage = () => {
   const { products, setProducts } = useProductStore();
 
   const fetchProducts = async () => {
-    const response = await getProducts();
+    const response = await productService.getProducts();
     setProducts(response);
   };
 

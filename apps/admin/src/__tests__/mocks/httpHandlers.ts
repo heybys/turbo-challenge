@@ -8,31 +8,31 @@ import {
 
 const httpHandlers: HttpHandler[] = [
   // 영화 목록
-  http.get('/api/movies', async () => {
+  http.get('http://localhost:8080/movies', async () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     return HttpResponse.json(movieListResponse);
   }),
 
   // 상품 목록
-  http.get('/api/products', async () => {
+  http.get('http://localhost:8080/products', async () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     return HttpResponse.json(mockProducts);
   }),
 
   // 할일 목록
-  http.get('/api/todos', async () => {
+  http.get('http://localhost:8080/todos', async () => {
     return HttpResponse.json(todos);
   }),
 
   // 할일 추가
-  http.post('/api/todos', async ({ request }) => {
+  http.post('http://localhost:8080/todos', async ({ request }) => {
     todos.push(await request.text());
     return new HttpResponse(null, {
       status: 201,
     });
   }),
 
-  http.get('/api/*', () => {
+  http.get('http://localhost:8080/**/*', () => {
     return passthrough();
   }),
 ];

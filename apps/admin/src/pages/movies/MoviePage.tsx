@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { getMovies } from '@apis/movie/movieService.ts';
 import { Movie } from '@apis/movie/movie.ts';
 import { Table } from 'react-bootstrap';
 import styled from 'styled-components';
+import movieService from '@apis/movie/movieService.ts';
 
 const StyledMoviePage = styled.div`
   font-size: 1rem;
@@ -20,7 +20,7 @@ const MoviePage = () => {
   };
 
   const fetchMovieList = async () => {
-    const response = await getMovies();
+    const response = await movieService.getMovies();
     setMovieList(response.movieList);
   };
 
