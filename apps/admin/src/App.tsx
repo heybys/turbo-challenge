@@ -5,17 +5,17 @@ import GlobalStyle from '@styles/globalStyle.ts';
 import MockServiceWorkerProvider from '@/__tests__/MockServiceWorkerProvider.tsx';
 import { ThemeProvider } from 'styled-components';
 import { defaultTheme } from '@repo/ui';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import queryClient from '@apis/utils/queryClient.ts';
 
-const queryClient = new QueryClient();
-const enableMSW = process.env.ENV === 'local';
+const isLocal = process.env.ENV === 'local';
 
 const App = () => {
   return (
-    <MockServiceWorkerProvider enable={enableMSW}>
+    <MockServiceWorkerProvider enable={isLocal}>
       <QueryClientProvider client={queryClient}>
-        <ReactQueryDevtools />
+        {isLocal && <ReactQueryDevtools />}
         <ThemeProvider theme={defaultTheme}>
           <GlobalStyle />
           <RouterProvider router={router} />

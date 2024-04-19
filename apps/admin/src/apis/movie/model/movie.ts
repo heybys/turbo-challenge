@@ -2,7 +2,7 @@ export interface Movie {
   movieCd: string;
   movieNm: string;
   directors: string[];
-  companys: string[];
+  companies: string[];
 }
 
 export interface MovieListResponse {

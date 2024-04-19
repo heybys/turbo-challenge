@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useParams } from 'react-router-dom';
-import { Movie } from '@apis/movie/movie.ts';
+import { Movie } from '@apis/movie/model/movie.ts';
 
 const MovieDetail = () => {
   const { movieCd } = useParams();
@@ -15,7 +15,7 @@ const MovieDetail = () => {
       <div>movieCd : {movieCd}</div>
       <div>movieNm : {movie.movieNm}</div>
       <div>directors : {movie.directors.join(', ')}</div>
-      <div>companys : {movie.companys.join(', ')}</div>
+      <div>companies : {movie.companies.join(', ')}</div>
     </div>
   );
 };

@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useProductStore } from '@stores/useProductStore.ts';
-import { Product } from '@apis/product/product.ts';
+import useFetchProductById from '@apis/product/useFetchProductById.ts';
 
 const ProductDetail = () => {
   const { productId } = useParams();
-  const { products, findById } = useProductStore();
-  const [product, setProduct] = useState<Product>();
-
-  useEffect(() => {
-    if (productId) {
-      const found = findById(+productId);
-      setProduct(found);
-    }
-  }, [products, productId]);
+  const { data: product } = useFetchProductById(Number(productId));
 
   if (!product) return null;
 

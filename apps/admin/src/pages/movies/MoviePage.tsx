@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { Movie } from '@apis/movie/movie.ts';
 import { Table } from 'react-bootstrap';
 import styled from 'styled-components';
-import movieService from '@apis/movie/movieService.ts';
+import useFetchMovies from '@apis/movie/useFetchMovies.ts';
+import { Movie } from '@apis/movie/model/movie.ts';
 
 const StyledMoviePage = styled.div`
   font-size: 1rem;
@@ -12,21 +12,12 @@ const StyledMoviePage = styled.div`
 `;
 
 const MoviePage = () => {
-  const [movieList, setMovieList] = useState<Movie[]>([]);
+  const { data: movieListResponse } = useFetchMovies();
   const navigate = useNavigate();
 
   const handleMovieClick = (movie: Movie) => {
     navigate(`/movies/${movie.movieCd}`, { state: { movie } });
   };
-
-  const fetchMovieList = async () => {
-    const response = await movieService.getMovies();
-    setMovieList(response.movieList);
-  };
-
-  useEffect(() => {
-    fetchMovieList();
-  }, []);
 
   return (
     <StyledMoviePage>
@@ -41,11 +32,11 @@ const MoviePage = () => {
           </tr>
         </thead>
         <tbody>
-          {movieList.map((movie) => (
+          {movieListResponse?.movieList?.map((movie) => (
             <tr key={movie.movieCd}>
               <td>{movie.movieCd}</td>
               <td>{movie.movieNm}</td>
-              <td>{movie.companys.join(', ')}</td>
+              <td>{movie.companies.join(', ')}</td>
               <td>
                 <button onClick={() => handleMovieClick(movie)}>View</button>
               </td>

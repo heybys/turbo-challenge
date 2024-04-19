@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import productService from '@apis/product/productService.ts';
-import { useProductStore } from '@stores/useProductStore.ts';
 import { Table } from 'react-bootstrap';
 import styled from 'styled-components';
+import useFetchProducts from '@apis/product/useFetchProducts.ts';
 
 const StyledProductPage = styled.div`
   font-size: 1rem;
@@ -12,16 +11,7 @@ const StyledProductPage = styled.div`
 `;
 
 const ProductPage = () => {
-  const { products, setProducts } = useProductStore();
-
-  const fetchProducts = async () => {
-    const response = await productService.getProducts();
-    setProducts(response.data);
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  const { data: products } = useFetchProducts({});
 
   return (
     <StyledProductPage>
@@ -35,7 +25,7 @@ const ProductPage = () => {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
+          {products?.map((product) => (
             <tr key={product.id}>
               <td>{product.id}</td>
               <td>{product.name}</td>

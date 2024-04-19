@@ -14,9 +14,27 @@ const httpHandlers: HttpHandler[] = [
   }),
 
   // 상품 목록
-  http.get('http://localhost:8080/products', async () => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    return HttpResponse.json(mockProducts);
+  http.get('http://localhost:8080/products', async ({ request }) => {
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    const url = new URL(request.url);
+
+    const name = url.searchParams.get('name');
+    const cost = url.searchParams.get('cost');
+
+    const filtered = mockProducts
+      .filter((p) => (name ? p.name === name : true))
+      .filter((p) => (cost ? p.cost === Number(cost) : true));
+
+    return HttpResponse.json(filtered);
+  }),
+
+  // 상품
+  http.get('http://localhost:8080/products/:productId', async ({ params }) => {
+    await new Promise((resolve) => setTimeout(resolve, 5000));
+    const { productId } = params;
+    return HttpResponse.json(
+      mockProducts.filter((p) => p.id === Number(productId)).at(0),
+    );
   }),
 
   // 할일 목록

@@ -1,5 +1,5 @@
-import { Product } from '@apis/product/product.ts';
-import { MovieListResponse } from '@apis/movie/movie.ts';
+import { Product } from '@apis/product/model/product.ts';
+import { MovieListResponse } from '@apis/movie/model/movie.ts';
 
 export const movieListResponse: MovieListResponse = {
   totCnt: 3,
@@ -8,19 +8,19 @@ export const movieListResponse: MovieListResponse = {
       movieCd: '20231111',
       movieNm: '땅에 쓰는 시',
       directors: ['ysKim', 'jyLee'],
-      companys: ['kt', 'samsung'],
+      companies: ['kt', 'samsung'],
     },
     {
       movieCd: '20232222',
       movieNm: '터미네이터',
       directors: ['steve jobs'],
-      companys: ['apple'],
+      companies: ['apple'],
     },
     {
       movieCd: '20233333',
       movieNm: '웡카',
       directors: ['jensen huang'],
-      companys: ['nvidia'],
+      companies: ['nvidia'],
     },
   ],
 };

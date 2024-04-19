@@ -33,13 +33,13 @@ const router = createBrowserRouter([
         element: <UiPage />,
       },
       {
+        path: '/movies',
+        element: <MoviePage />,
+        children: moviePageRoutes,
+      },
+      {
         element: <AuthGuardLayout />,
         children: [
-          {
-            path: '/movies',
-            element: <MoviePage />,
-            children: moviePageRoutes,
-          },
           {
             path: '/products',
             element: <ProductPage />,

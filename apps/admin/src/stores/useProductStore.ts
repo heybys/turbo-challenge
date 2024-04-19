@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Product } from '@apis/product/product.ts';
+import { Product } from '@apis/product/model/product.ts';
 
 interface ProductState {
   products: Product[];
