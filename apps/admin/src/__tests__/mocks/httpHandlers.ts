@@ -55,7 +55,7 @@ const httpHandlers: HttpHandler[] = [
     return HttpResponse.json(mockProducts);
   }),
 
-  http.get('http://localhost:8080/**/*', () => {
+  http.all('http://localhost:8080/**', () => {
     return passthrough();
   }),
 ];

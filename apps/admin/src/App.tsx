@@ -9,7 +9,7 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import queryClient from '@apis/utils/queryClient.ts';
 
-const isLocal = process.env.ENV === 'local';
+const isLocal = false; //process.env.ENV === 'local';
 
 const App = () => {
   return (
