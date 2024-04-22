@@ -6,12 +6,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../node_modules/realgrid/dist/realgrid-style.css';
 import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
-import './locales/i18n.ts';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  // </React.StrictMode>,
+  <App />,
 );
 
 reportWebVitals();

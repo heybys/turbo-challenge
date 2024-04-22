@@ -8,8 +8,9 @@ import { defaultTheme } from '@repo/ui';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import queryClient from '@apis/utils/queryClient.ts';
+import './locales/i18n.ts';
 
-const isLocal = false; //process.env.ENV === 'local';
+const isLocal = process.env.ENV === 'local';
 
 const App = () => {
   return (

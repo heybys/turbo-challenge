@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import useFetchProductById from '@apis/product/useFetchProductById.ts';
+import useFetchProductById from '@apis/product/queries/useFetchProductById.ts';
 
 const ProductDetail = () => {
   const { productId } = useParams();

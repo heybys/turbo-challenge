@@ -38,7 +38,7 @@ const router = createBrowserRouter([
         children: moviePageRoutes,
       },
       {
-        element: <AuthGuardLayout />,
+        // element: <AuthGuardLayout />,
         children: [
           {
             path: '/products',

@@ -13,9 +13,9 @@ const useFetchProductById = (productId: number) => {
   return useQuery({
     queryKey: [`products/${productId}`],
     queryFn: fetch,
-    staleTime: 1000 * 10,
-    gcTime: 1000 * 20,
     select: (response) => response.data,
+    // staleTime: 1000 * 10,
+    // gcTime: 1000 * 20,
   });
 };
 

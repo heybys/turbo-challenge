@@ -1,21 +1,19 @@
 import i18n from 'i18next';
-import I18NextHttpBackend, { HttpBackendOptions } from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
+import enTranslation from './en/translation.json';
+import koTranslation from './ko/translation.json';
 
-i18n
-  .use(initReactI18next)
-  // .use(I18nextBrowserLanguageDetector)
-  .use(I18NextHttpBackend)
-  .init<HttpBackendOptions>({
-    lng: 'ko',
-    supportedLngs: ['en', 'ko'],
-    debug: true,
-    backend: {
-      loadPath: 'http://localhost:8080/locales/{{lng}}/translation.json',
-      crossDomain: true,
-      withCredentials: true,
-      // requestOptions: {mode: 'cors'}
+i18n.use(initReactI18next).init({
+  resources: {
+    en: {
+      translation: enTranslation,
     },
-  });
+    ko: {
+      translation: koTranslation,
+    },
+  },
+  lng: 'ko',
+  fallbackLng: 'en',
+});
 
 export default i18n;
