@@ -23,7 +23,8 @@ const useHttpClient = () => {
       return request;
     },
     (error: AxiosError) => {
-      return Promise.reject(error);
+      alert(error.message);
+      return true;
     },
   );
 
@@ -32,7 +33,8 @@ const useHttpClient = () => {
       return response;
     },
     (error: AxiosError) => {
-      return Promise.reject(error);
+      alert(error.message);
+      return true;
     },
   );
 

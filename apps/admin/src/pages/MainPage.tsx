@@ -21,6 +21,13 @@ const MainPage = () => {
       <p>{currentTime}</p>
       <p>{JSON.stringify(data, null, '\t')}</p>
       <p>{t('welcome')}</p>
+      <div>
+        <img
+          src={'http://localhost:8080/images/samoyed.jpeg'}
+          alt="samoyed"
+          width={300}
+        />
+      </div>
       {/*<Trans i18nKey="userMessagesUnread" count={3}>*/}
       {/*  Hello <strong title={t('nameTitle')}>{{name}}</strong>, you have {{count}} unread message.*/}
       {/*</Trans>*/}

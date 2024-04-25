@@ -7,7 +7,6 @@ import useQueryKey from '@apis/product/key/useQueryKey.ts';
 
 const useFetchProducts = (queryParams?: ProductsQueryParams) => {
   const { httpClient } = useHttpClient();
-  const queryKey = useQueryKey(queryParams);
 
   const fetch = async (): Promise<AxiosResponse<Product[]>> => {
     const searchParams = new URLSearchParams({
@@ -18,11 +17,9 @@ const useFetchProducts = (queryParams?: ProductsQueryParams) => {
   };
 
   return useQuery({
-    queryKey,
+    queryKey: useQueryKey(queryParams),
     queryFn: fetch,
     select: (response) => response.data,
-    // staleTime: 1000 * 60 * 5,
-    // gcTime: 1000 * 60 * 10,
   });
 };
 
