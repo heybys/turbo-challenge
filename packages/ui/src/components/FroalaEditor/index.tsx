@@ -1,6 +1,7 @@
-import FroalaEditorComponent from 'react-froala-wysiwyg';
-
 import React from 'react';
+import FroalaEditorComponent from 'react-froala-wysiwyg';
+import 'froala-editor/css/froala_style.min.css';
+import 'froala-editor/css/froala_editor.pkgd.min.css';
 
 export const FroalaEditor = () => {
   const config = {

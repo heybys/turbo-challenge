@@ -28,9 +28,6 @@ const MainPage = () => {
           width={300}
         />
       </div>
-      {/*<Trans i18nKey="userMessagesUnread" count={3}>*/}
-      {/*  Hello <strong title={t('nameTitle')}>{{name}}</strong>, you have {{count}} unread message.*/}
-      {/*</Trans>*/}
     </StyledMainPage>
   );
 };
