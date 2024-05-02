@@ -129,10 +129,6 @@ export const RealGrid = ({
 
   const handleClick = () => {
     // console.log(jsonRows);
-
-    const rows1 = dataProvider.getJsonRows();
-
-    const jsonRows = gridView.getModelsOfRows();
     // console.log(rows1);
     // alert(JSON.stringify(jsonRows, null, 2));
   };
