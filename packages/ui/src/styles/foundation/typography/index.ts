@@ -1,2 +1,3 @@
-export * from './base.ts';
-export * from './kr.ts';
+export * from './base';
+export * from './kr';
+export * from './cn';

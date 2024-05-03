@@ -1,42 +1,39 @@
-import * as scale from './design-token/scale';
-import * as semantic from './design-token/semantic';
+// import * as scale from './design-token/scale';
+// import * as semantic from './design-token/semantic';
+import * as foundation from './foundation';
 
 export type Theme = typeof defaultTheme;
 
 export const defaultTheme = {
-  colors: {
-    ...scale.color,
-    ...semantic.color,
+  color: {
+    ...foundation.color,
   },
-  radius: {
-    ...scale.radius,
-    ...semantic.radius,
+  shadow: {
+    ...foundation.shadow,
   },
   typography: {
-    ...scale.typography,
-    ...semantic.typography,
+    ...foundation.typography,
   },
   breakpoint: {
-    ...scale.breakpoint,
-    ...semantic.breakpoint,
+    ...foundation.layout.breakpoint,
   },
 };
 
-export const lightTheme: Theme = {
-  colors: {
-    ...scale.color,
-    ...semantic.color,
-  },
-  radius: {
-    ...scale.radius,
-    ...semantic.radius,
-  },
-  typography: {
-    ...scale.typography,
-    ...semantic.typography,
-  },
-  breakpoint: {
-    ...scale.breakpoint,
-    ...semantic.breakpoint,
-  },
-};
+// export const lightTheme: Theme = {
+//   colors: {
+//     ...scale.color,
+//     ...semantic.color,
+//   },
+//   radius: {
+//     ...scale.radius,
+//     ...semantic.radius,
+//   },
+//   typography: {
+//     ...scale.typography,
+//     ...semantic.typography,
+//   },
+//   breakpoint: {
+//     ...scale.breakpoint,
+//     ...semantic.breakpoint,
+//   },
+// };
