@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 const StyledMainPage = styled.div`
   ${({ theme }) => ({
-    backgroundColor: theme.colors.white,
+    backgroundColor: theme.color.white,
   })}
   padding: 100px;
 `;
@@ -18,7 +18,7 @@ const StyledBox = styled.div`
   background-color: white;
   padding: 30px;
 
-  ${({ theme }) => ({
+  ${() => ({
     // boxShadow: theme.shadow.level4,
   })}
 `;

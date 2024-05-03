@@ -9,7 +9,7 @@ const StyledDiv = styled.div`
   width: 1000px;
 
   ${(props) => ({
-    color: props.theme.colors.blue900,
+    color: props.theme.color.blue50,
   })}
 
   .fc-toolbar-title {
