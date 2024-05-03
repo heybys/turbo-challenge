@@ -7,4 +7,5 @@ export const defaultTheme = {
   radius: {},
   typography: {},
   breakpoint: {},
-} as Theme;
+  shadow: {},
+} as unknown as Theme;

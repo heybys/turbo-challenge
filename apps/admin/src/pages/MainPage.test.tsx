@@ -19,6 +19,15 @@ jest.mock('@repo/ui', () => {
   };
 });
 
+jest.mock('react-i18next', () => ({
+  useTranslation: () => {
+    return {
+      t: () => [],
+      i18n: {},
+    };
+  },
+}));
+
 describe('MainPage', () => {
   test('render', () => {
     render(<MainPage />);

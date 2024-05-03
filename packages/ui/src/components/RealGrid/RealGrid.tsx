@@ -99,7 +99,7 @@ const OperationButton = styled.button`
   }
 `;
 
-export const RealGrid = ({
+const RealGrid = ({
   add,
   remove,
   excel,
@@ -183,3 +183,5 @@ export const RealGrid = ({
     </RealGridContainer>
   );
 };
+
+export default RealGrid;

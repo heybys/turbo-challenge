@@ -1,12 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  FroalaEditor,
-  FullCalendar,
-  HighCharts,
-  RealGrid,
-  ViewOptions,
-} from '@repo/ui';
+import { FroalaEditor, FullCalendar, HighCharts, RealGrid } from '@repo/ui';
 import { columns, fields, rows } from './realgridData.ts';
 
 const StyledSamplePage = styled.div`
