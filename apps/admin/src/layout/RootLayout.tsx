@@ -2,7 +2,8 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { Security } from '@okta/okta-react';
 import { RestoreOriginalUriFunction } from '@okta/okta-react/bundles/types/OktaContext';
 import OktaAuth, { OktaAuthOptions, toRelativeUrl } from '@okta/okta-auth-js';
-import { SidebarLayout } from '@repo/ui';
+import { IconCalendar, IconGauge } from '@tabler/icons-react';
+import SidebarContainer from '@layout/SidebarContainer.tsx';
 
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID || '0oag62vqug68vN46s5d7';
 const ISSUER =
@@ -21,11 +22,6 @@ const oktaAuthOptions: OktaAuthOptions = {
 
 const oktaAuth = new OktaAuth(oktaAuthOptions);
 
-// const Layout = styled.div`
-//   display: flex;
-//   flex-direction: row;
-// `
-
 const RootLayout = () => {
   const navigate = useNavigate();
   const restoreOriginalUri: RestoreOriginalUriFunction = (
@@ -37,9 +33,9 @@ const RootLayout = () => {
 
   return (
     <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
-      <SidebarLayout>
+      <SidebarContainer>
         <Outlet />
-      </SidebarLayout>
+      </SidebarContainer>
     </Security>
   );
 };

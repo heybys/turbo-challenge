@@ -5,7 +5,6 @@ import MoviePage from '@pages/movies/MoviePage.tsx';
 import RootLayout from '@layout/RootLayout.tsx';
 import moviePageRoutes from '@router/moviePageRoutes.tsx';
 import productPageRoutes from '@router/productPageRoutes.tsx';
-import AuthGuardLayout from '@layout/AuthGuardLayout.tsx';
 import NotFoundPage from '@pages/NotFoundPage.tsx';
 import SignInPage from '@pages/sign-in/SignInPage.tsx';
 import LoginCallbackPage from '@pages/login/callback/LoginCallbackPage.tsx';

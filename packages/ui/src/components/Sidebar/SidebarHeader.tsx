@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PropsWithChildren } from 'react';
+import { HTMLAttributes } from 'react';
 
 const StyledSidebarHeader = styled.div`
   color: #fff;
@@ -14,10 +14,15 @@ const StyledSidebarHeader = styled.div`
   font-weight: 250;
   line-height: 24px;
   text-align: left;
+
+  cursor: pointer;
 `;
 
-const SidebarHeader = ({ children }: PropsWithChildren) => {
-  return <StyledSidebarHeader>{children}</StyledSidebarHeader>;
+const SidebarHeader = ({
+  children,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) => {
+  return <StyledSidebarHeader {...props}>{children}</StyledSidebarHeader>;
 };
 
 export default SidebarHeader;
