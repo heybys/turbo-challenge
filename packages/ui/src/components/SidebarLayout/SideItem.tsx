@@ -3,7 +3,7 @@ import { ForwardRefExoticComponent, RefAttributes, useState } from 'react';
 import { Icon, IconMinus, IconPlus, IconProps } from '@tabler/icons-react';
 
 const Label = styled.div`
-  font-family: Spoqa Han Sans Neo;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 19.5px;

@@ -9,7 +9,7 @@ const StyledSidebarHeader = styled.div`
   display: flex;
   gap: 2px;
 
-  font-family: Spoqa Han Sans Neo;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
   font-size: 16px;
   font-weight: 250;
   line-height: 24px;
