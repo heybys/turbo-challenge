@@ -1,0 +1,14 @@
+{
+  "common": {
+    "welcome": "우리 애플리케이션에 오신걸 환영합니다."
+  },
+  "pages": {
+    "login": {
+      "loginButton": "로그인",
+      "loginFailMessage": "로그인에 실패하였습니다."
+    },
+    "code": {
+      "codeSaveMessage": "코드 저장에 성공하였습니다."
+    }
+  }
+}

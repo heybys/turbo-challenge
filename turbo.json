@@ -33,7 +33,10 @@
       "dependsOn": ["@repo/ui#build"]
     },
     "clean": {},
-    "clean:build": {},
+    "clean:build": {
+      "cache": false,
+      "persistent": false
+    },
     "clean:dockerize": {
       "cache": false,
       "persistent": false

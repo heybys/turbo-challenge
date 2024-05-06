@@ -100,7 +100,7 @@ const SidebarContainer = ({ children }: PropsWithChildren) => {
   const recursiveMap = (menus: Item[], depth: number) => {
     return menus.map((menu) => {
       const handleClick = () => {
-        if (!menu.path.startsWith('/tlm')) window.location.href = menu.path;
+        if (!menu.path.startsWith('/gea')) window.location.href = menu.path;
         navigate(menu.path);
       };
 
@@ -128,7 +128,7 @@ const SidebarContainer = ({ children }: PropsWithChildren) => {
           }}
         >
           <BrandText>Smilegate</BrandText>
-          <span>Admin TLM</span>
+          <span>Admin GEA</span>
         </SidebarHeader>
         <SidebarItems>{recursiveMap(mockData, 0)}</SidebarItems>
       </SidebarArea>

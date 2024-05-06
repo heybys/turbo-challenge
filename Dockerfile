@@ -2,7 +2,8 @@
 FROM nginx:alpine
 
 # React 프로젝트의 빌드된 dist 폴더의 내용을 Nginx가 제공하는 디렉토리로 복사한다
-COPY dist/ /usr/share/nginx/html/
+COPY /apps/admin/dist/ /usr/share/nginx/html/tlm/
+COPY /apps/gea-app/dist/ /usr/share/nginx/html/gea/
 
 # Nginx의 기본 설정을 삭제합니다.
 RUN rm /etc/nginx/conf.d/default.conf

@@ -4,10 +4,11 @@ import {
   MouseEventHandler,
   PropsWithChildren,
   RefAttributes,
+  useEffect,
   useState,
 } from 'react';
 import { Icon, IconMinus, IconPlus, IconProps } from '@tabler/icons-react';
-import useItems from './useItems.ts';
+import { useLocation } from 'react-router-dom';
 
 const Indicator = styled.div`
   width: 20px;
@@ -25,18 +26,18 @@ const Indicator = styled.div`
 `;
 
 const Label = styled.div<
-  React.HTMLAttributes<HTMLDivElement> & { color: string }
+  React.HTMLAttributes<HTMLDivElement> & { $color: string }
 >`
   font-family: 'Spoqa Han Sans Neo', sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 19.5px;
   text-align: left;
-  color: ${({ color }) => color};
+  color: ${({ $color }) => $color};
 `;
 
 const IconWrapper = styled.div<
-  React.HTMLAttributes<HTMLDivElement> & { color: string }
+  React.HTMLAttributes<HTMLDivElement> & { $color: string }
 >`
   width: 20px;
   height: 20px;
@@ -47,7 +48,7 @@ const IconWrapper = styled.div<
   svg {
     width: 16px;
     height: 16px;
-    color: ${({ color }) => color};
+    color: ${({ $color }) => $color};
   }
 `;
 
@@ -62,17 +63,17 @@ const SelectorInfo = styled.div`
 
 const Selector = styled.div<
   React.HTMLAttributes<HTMLDivElement> & {
-    backgroundColor: string;
-    paddingLeft: string;
+    $backgroundColor: string;
+    $paddingLeft: string;
   }
 >`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 8px 10px ${({ paddingLeft }) => paddingLeft};
+  padding: 10px 8px 10px ${({ $paddingLeft }) => $paddingLeft};
   height: 40px;
   cursor: pointer;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: ${({ $backgroundColor }) => $backgroundColor};
 `;
 
 const SubItems = styled.div``;
@@ -84,30 +85,33 @@ interface SidebarItemProps extends PropsWithChildren {
     Omit<IconProps, 'ref'> & RefAttributes<Icon>
   >;
   label: string;
-  selected?: boolean;
+  path: string;
   type?: 'category' | 'menu';
-  depth: number;
   onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
 const SidebarItem = ({
   icon: Icon,
   label,
+  path,
   type = 'category',
-  depth,
   onClick,
   children,
 }: SidebarItemProps) => {
-  const { selectedItems, select } = useItems();
+  // const { selectedItems, select } = useItems();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
 
-  const isSelected = selectedItems.includes(label);
+  const isSelected = location.pathname.startsWith(path) || open;
 
   const handleClick: MouseEventHandler<HTMLDivElement> = (event) => {
-    setOpen(!open);
-    select(depth, label);
+    if (!location.pathname.startsWith(path) && children) setOpen(!open);
     onClick && onClick(event);
   };
+
+  useEffect(() => {
+    type === 'menu' && setOpen(false);
+  }, [location.pathname]);
 
   const getSelectorBackgroundColor = () => {
     const backgroundColor = type === 'category' ? '#282929' : '#1F1F1F';
@@ -117,7 +121,7 @@ const SidebarItem = ({
   };
 
   const getSelectorPaddingLeft = () => {
-    return depth === 2 && type === 'menu' ? '36px' : '14px';
+    return path.match(/\//g)?.length === 3 && type === 'menu' ? '36px' : '14px';
   };
 
   const getIconColor = () => {
@@ -138,12 +142,12 @@ const SidebarItem = ({
     <StyledSidebarItem>
       <Selector
         onClick={handleClick}
-        backgroundColor={getSelectorBackgroundColor()}
-        paddingLeft={getSelectorPaddingLeft()}
+        $backgroundColor={getSelectorBackgroundColor()}
+        $paddingLeft={getSelectorPaddingLeft()}
       >
         <SelectorInfo>
-          <IconWrapper color={getIconColor()}>{Icon && <Icon />}</IconWrapper>
-          <Label color={getLabelColor()}>{label}</Label>
+          <IconWrapper $color={getIconColor()}>{Icon && <Icon />}</IconWrapper>
+          <Label $color={getLabelColor()}>{label}</Label>
         </SelectorInfo>
         <Indicator hidden={!children}>
           {isSelected ? <IconMinus /> : <IconPlus />}

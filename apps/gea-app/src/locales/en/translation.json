@@ -1,0 +1,14 @@
+{
+  "common": {
+    "welcome": "Welcome to Our Application"
+  },
+  "pages": {
+    "login": {
+      "loginButton": "LOGIN",
+      "loginFailMessage": "failed to login"
+    },
+    "code": {
+      "codeSaveMessage": "save code successfully"
+    }
+  }
+}
