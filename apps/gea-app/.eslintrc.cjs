@@ -1,7 +1,7 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   root: true,
-  extends: ["@repo/eslint-config/react.js"],
+  extends: ["@repo/config/eslint/react.js"].map(require.resolve),
   parserOptions: {
     project: './tsconfig.lint.json',
     tsconfigRootDir: __dirname,

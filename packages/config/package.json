@@ -1,10 +1,10 @@
 {
-  "name": "@repo/eslint-config",
+  "name": "@repo/config",
   "version": "1.0.0",
-  "private": true,
   "files": [
-    "react.js"
+    "./eslint/react.js"
   ],
+  "private": true,
   "scripts": {
     "clean": "rm -rf ./node_modules && rm -rf ./.turbo"
   },
