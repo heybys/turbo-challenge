@@ -10,5 +10,15 @@
     "code": {
       "codeSaveMessage": "save code successfully"
     }
+  },
+  "errors": {
+    "messages": {
+      "msg.required.param.empty": "Empty required Parameter. [{{0}}]"
+    },
+    "params": {
+      "label": {
+        "companyCode": "Company Code"
+      }
+    }
   }
 }

@@ -7,3 +7,5 @@ export { HighCharts } from './HighCharts';
 export { Spinner, SpinnerCenter } from './Spinner';
 export { Button } from 'react-bootstrap';
 export * from 'realgrid';
+
+export { default as MuiNavBar } from './MuiNavBar.tsx';

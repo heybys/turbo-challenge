@@ -28,6 +28,7 @@
     "clean:build": "rm -rf ./dist && rm -rf ./.turbo"
   },
   "dependencies": {
+    "@emotion/styled": "^11.11.5",
     "@fullcalendar/core": "^6.1.11",
     "@fullcalendar/daygrid": "^6.1.11",
     "@fullcalendar/list": "^6.1.11",
@@ -35,6 +36,8 @@
     "@fullcalendar/timegrid": "^6.1.11",
     "@mantine/core": "^7.9.0",
     "@mantine/hooks": "^7.9.0",
+    "@mui/material": "^5.15.17",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@tabler/icons-react": "^3.3.0",
     "bootstrap": "^5.3.3",
     "highcharts-react-official": "^3.2.1",
@@ -44,6 +47,7 @@
     "react-froala-wysiwyg": "^4.2.0",
     "react-router-dom": "^6.23.0",
     "realgrid": "^2.8.1",
+    "styled-components": "^6.1.10",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
@@ -54,13 +58,9 @@
     "babel-plugin-styled-components": "^2.1.4",
     "jest-styled-components": "^7.2.0",
     "path": "^0.12.7",
-    "styled-components": "^6.1.8",
     "typescript": "^5.3.3",
     "vite": "^5.2.6",
     "vite-plugin-dts": "^3.7.3",
     "vite-tsconfig-paths": "^4.3.2"
-  },
-  "peerDependencies": {
-    "styled-components": "^6.1.8"
   }
 }

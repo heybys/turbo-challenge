@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import { useLocation, useParams } from 'react-router-dom';
 
 interface ItemsState {
   selectedItems: string[];
@@ -7,7 +6,7 @@ interface ItemsState {
 }
 
 const useItems = create<ItemsState>((setState) => {
-  const location = useLocation();
+  // const location = useLocation();
 
   return {
     selectedItems: [],

@@ -1,13 +1,5 @@
 import { ForwardRefExoticComponent, RefAttributes, useState } from 'react';
-import {
-  Group,
-  Box,
-  Collapse,
-  ThemeIcon,
-  Text,
-  UnstyledButton,
-  rem,
-} from '@mantine/core';
+import { Box, Collapse, Group, rem, Text, UnstyledButton } from '@mantine/core';
 import {
   Icon,
   IconCalendarStats,

@@ -9,7 +9,9 @@ export const MockServiceWorkerProvider = ({
 
   useEffect(() => {
     if (enable && !started) {
-      worker.start().then(() => setStarted(true));
+      worker
+        .start({ onUnhandledRequest: 'bypass' })
+        .then(() => setStarted(true));
     }
   }, [started]);
 
