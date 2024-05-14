@@ -36,6 +36,7 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@repo/config": "*",
     "@tanstack/react-query-devtools": "^5.29.2",
     "@types/node": "^20.12.2",
     "@types/react": "^18.2.66",
