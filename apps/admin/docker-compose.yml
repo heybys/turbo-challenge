@@ -1,6 +1,5 @@
 services:
   admin:
-    container_name: admin
     build: .
     image: admin:latest
     ports:
