@@ -4,7 +4,7 @@
 APP_NAME="admin"
 
 # Move target app and build image and run
-cd "../apps/$APP_NAME/deploy" || exit
+cd "./apps/$APP_NAME/deploy" || exit
 
 CONTAINER_NAME=$APP_NAME
 

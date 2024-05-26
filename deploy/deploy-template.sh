@@ -19,6 +19,8 @@ fi
 cd $CLONE_DIR || exit
 rm -rf ./package-lock.json
 
+chmod 775 ./deploy/*.sh
+
 ./deploy/build.sh
 
 ./deploy/admin-dockerize.sh
