@@ -1,6 +1,8 @@
 services:
   admin:
-    build: .
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
     container_name: admin
     image: admin:latest
     ports:

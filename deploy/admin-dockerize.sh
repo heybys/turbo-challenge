@@ -46,8 +46,8 @@ else
   echo "Image $IMAGE_NAME not found. Nothing to delete."
 fi
 
-docker compose build -f ./apps/admin/deploy/Dockerfile ./apps/admin/
+docker compose -f "apps/$APP_NAME/deploy/docker-compose.yml" build
 echo "------------------------------------------------Build docker image completed------------------------------------------------"
 
-docker compose up -d -f ./apps/admin/deploy/Dockerfile ./apps/admin/
+docker compose -f "apps/$APP_NAME/deploy/docker-compose.yml" up -d
 echo "------------------------------------------------Run docker container completed------------------------------------------------"
