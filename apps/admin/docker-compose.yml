@@ -1,6 +1,6 @@
-version: '3.8'
 services:
-  web:
+  admin:
+    container_name: admin
     build: .
     image: admin:latest
     ports:
