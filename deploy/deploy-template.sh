@@ -11,7 +11,7 @@ if [ ! -d "$CLONE_DIR" ]; then
     echo "------------------------------------------------Git clone completed from $BRANCH------------------------------------------------"
 else
     cd $CLONE_DIR || exit
-    git pull origin $BRANCH
+    git pull origin $BRANCH --force
     cd ..
     echo "------------------------------------------------Git pull completed from $BRANCH------------------------------------------------"
 fi

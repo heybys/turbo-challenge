@@ -3,9 +3,6 @@
 # Set the name of the application
 APP_NAME="admin"
 
-# Move target app and build image and run
-cd "./apps/$APP_NAME/deploy" || exit
-
 CONTAINER_NAME=$APP_NAME
 
 # Check if the container exists
@@ -49,8 +46,8 @@ else
   echo "Image $IMAGE_NAME not found. Nothing to delete."
 fi
 
-docker compose build
+docker compose build -f ./apps/admin/deploy/Dockerfile ./apps/admin/
 echo "------------------------------------------------Build docker image completed------------------------------------------------"
 
-docker compose up -d
+docker compose up -d -f ./apps/admin/deploy/Dockerfile ./apps/admin/
 echo "------------------------------------------------Run docker container completed------------------------------------------------"
