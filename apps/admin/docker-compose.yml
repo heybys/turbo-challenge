@@ -1,6 +1,7 @@
 services:
   admin:
     build: .
+    container_name: admin
     image: admin:latest
     ports:
       - "80:80"
