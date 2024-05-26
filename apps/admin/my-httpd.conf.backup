@@ -1,0 +1,20 @@
+<VirtualHost *:80>
+    ServerName hello.test.com
+    Redirect permanent / https://hello.test.com/
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName hello.test.com
+
+    SSLEngine on
+    SSLCertificateFile "/usr/local/apache2/conf/certs/server.crt"
+    SSLCertificateKeyFile "/usr/local/apache2/conf/certs/server.key"
+
+    DocumentRoot "/usr/local/apache2/htdocs"
+    <Directory "/usr/local/apache2/htdocs">
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+</VirtualHost>
+
